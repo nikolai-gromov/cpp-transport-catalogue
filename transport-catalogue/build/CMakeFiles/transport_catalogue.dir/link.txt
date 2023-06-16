@@ -1,0 +1,1 @@
+/usr/bin/g++  -g   CMakeFiles/transport_catalogue.dir/input_reader.cpp.o CMakeFiles/transport_catalogue.dir/main.cpp.o CMakeFiles/transport_catalogue.dir/stat_reader.cpp.o CMakeFiles/transport_catalogue.dir/transport_catalogue.cpp.o  -o transport_catalogue 
