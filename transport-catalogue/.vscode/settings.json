@@ -1,3 +1,6 @@
 {
-    "cmake.sourceDirectory": "/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue"
+    "cmake.sourceDirectory": "/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue",
+    "files.associations": {
+        "string_view": "cpp"
+    }
 }

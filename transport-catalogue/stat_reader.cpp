@@ -44,14 +44,5 @@ void OutputRouteData(TransportCatalogue& catalog, std::string_view name) {
         std::cout << "Bus "s << name << ": not found"s << std::endl;
     }
 }
-
-void OutputData(TransportCatalogue& catalog, query::CatalogQueries queries) {
-    if (queries.type == query::QueryType::Stop) {
-        OutputStopsData(catalog, queries.name);
-    }
-    if (queries.type == query::QueryType::Bus) {
-        OutputRouteData(catalog, queries.name);
-    }
-}
 }
 }

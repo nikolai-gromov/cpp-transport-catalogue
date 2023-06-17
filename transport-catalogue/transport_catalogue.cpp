@@ -6,7 +6,7 @@ namespace transport_catalogue
 {
 void TransportCatalogue::AddStop(std::string_view name, double latitude, double longitude) {
     stops_.push_back({{ name.begin(), name.end() }, latitude, longitude});
-    stopname_to_stop_[stops_.back().stopname] = &stops_.back();
+    stopname_to_stop_[stops_.back().name] = &stops_.back();
 }
 
 const Stop* TransportCatalogue::FindStop(std::string_view name) {
@@ -16,9 +16,9 @@ const Stop* TransportCatalogue::FindStop(std::string_view name) {
     return nullptr;
 }
 
-void TransportCatalogue::AddBus(std::string_view name, RouteType route, std::vector<std::string_view> stops) {
+void TransportCatalogue::AddBus(std::string_view name, RouteType route, const std::vector<std::string_view>& stops) {
     Bus result;
-    result.busname = { name.begin(), name.end() };
+    result.name = { name.begin(), name.end() };
     for (auto& stop : stops) {
         auto found_stop = FindStop(stop);
         if (found_stop != nullptr) {
@@ -32,11 +32,11 @@ void TransportCatalogue::AddBus(std::string_view name, RouteType route, std::vec
         }
     }
     buses_.push_back(std::move(result));
-    busname_to_bus_[buses_.back().busname] = &buses_.back();
-    for (std::string_view stopname : stops) {
-        auto found_stop = FindStop(stopname);
+    busname_to_bus_[buses_.back().name] = &buses_.back();
+    for (std::string_view name : stops) {
+        auto found_stop = FindStop(name);
         if (found_stop != nullptr) {
-            buses_by_stop_[found_stop].insert(buses_.back().busname);
+            buses_by_stop_[found_stop].insert(buses_.back().name);
         }
     }
 }
@@ -58,7 +58,7 @@ std::set<std::string_view> TransportCatalogue::GetBusesByStop(std::string_view n
     return empty_set;
 }
 
-void TransportCatalogue::AddDistanceBetweenStops(std::string_view name_first, const std::uint64_t distance, std::string_view name_second) {
+void TransportCatalogue::SetDistanceBetweenStops(std::string_view name_first, const std::uint64_t distance, std::string_view name_second) {
     auto stop_first_ptr = FindStop(name_first);
     auto stop_second_ptr = FindStop(name_second);
     if (stop_first_ptr != nullptr && stop_second_ptr != nullptr) {

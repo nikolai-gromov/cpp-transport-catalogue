@@ -160,19 +160,19 @@ void InputReader::LoadData(TransportCatalogue& catalog, CatalogQueries queries, 
             } else {
                 if (!queries.distance_to_stop.empty()) {
                     for (auto [distance, stop] : queries.distance_to_stop) {
-                        catalog.AddDistanceBetweenStops(queries.name, distance, stop);
+                        catalog.SetDistanceBetweenStops(queries.name, distance, stop);
                     }
                 }
             }
         } else {
-            output::OutputData(catalog, queries);
+            output::OutputStopsData(catalog, queries.name);
         }
         break;
     case QueryType::Bus:
         if (!queries.list_of_stops.empty()) {
             catalog.AddBus(queries.name, queries.route_type, queries.list_of_stops);
         } else {
-            output::OutputData(catalog, queries);
+            output::OutputRouteData(catalog, queries.name);
         }
         break;
     }

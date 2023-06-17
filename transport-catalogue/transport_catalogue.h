@@ -32,12 +32,12 @@ enum class RouteType {
 };
 
 struct Stop {
-    std::string stopname;
+    std::string name;
     geo::Coordinates coordinates;
 };
 
 struct Bus {
-    std::string busname;
+    std::string name;
     std::vector<const Stop*> stops;
 };
 
@@ -55,13 +55,13 @@ public:
 
     const Stop* FindStop(std::string_view name);
 
-    void AddBus(std::string_view name, RouteType route, std::vector<std::string_view> stops);
+    void AddBus(std::string_view name, RouteType route, const std::vector<std::string_view>& stops);
 
     const Bus* FindBus(std::string_view name);
 
     std::set<std::string_view> GetBusesByStop(std::string_view name);
 
-    void AddDistanceBetweenStops(std::string_view name_first, const std::uint64_t distance, std::string_view name_second);
+    void SetDistanceBetweenStops(std::string_view name_first, const std::uint64_t distance, std::string_view name_second);
 
     std::uint64_t GetDistanceBetweenStops(const Stop* stop_first_ptr, const Stop* stop_second_ptr);
 
