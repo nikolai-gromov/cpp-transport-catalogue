@@ -8,7 +8,7 @@
 
 namespace transport_catalogue
 {
-namespace query
+namespace input_reader
 {
 inline std::vector<std::string_view> Split(std::string_view str, char c);
 
@@ -32,9 +32,9 @@ struct CatalogQueries {
     void ParsingQueryTypeHandling(std::string input);
 };
 
-class InputReader {
+class ReaderLoader {
 public:
-    void ParsingInputData();
+    void ParsingRequestsForFillingInTheCatalog(std::istream& input);
     void Load(TransportCatalogue& catalog);
     void LoadData(TransportCatalogue& catalog, CatalogQueries queries, bool flag = false);
 

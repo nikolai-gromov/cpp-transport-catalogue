@@ -34,6 +34,8 @@ enum class RouteType {
 struct Stop {
     std::string name;
     geo::Coordinates coordinates;
+    double latitude = 0.;
+    double longitude = 0.;
 };
 
 struct Bus {

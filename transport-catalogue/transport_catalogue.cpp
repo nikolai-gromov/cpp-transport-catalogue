@@ -4,8 +4,12 @@
 
 namespace transport_catalogue
 {
-void TransportCatalogue::AddStop(std::string_view name, double latitude, double longitude) {
-    stops_.push_back({{ name.begin(), name.end() }, latitude, longitude});
+void TransportCatalogue::AddStop(std::string_view name, double lat, double lng) {
+    Stop stop;
+    stop.latitude = lat;
+    stop.longitude = lng;
+    stop.name = { name.begin(), name.end() };
+    stops_.push_back({ stop.name, stop.latitude, stop.longitude});
     stopname_to_stop_[stops_.back().name] = &stops_.back();
 }
 
@@ -17,21 +21,21 @@ const Stop* TransportCatalogue::FindStop(std::string_view name) {
 }
 
 void TransportCatalogue::AddBus(std::string_view name, RouteType route, const std::vector<std::string_view>& stops) {
-    Bus result;
-    result.name = { name.begin(), name.end() };
+    Bus bus;
+    bus.name = { name.begin(), name.end() };
     for (auto& stop : stops) {
         auto found_stop = FindStop(stop);
         if (found_stop != nullptr) {
-            result.stops.push_back(found_stop);
+            bus.stops.push_back(found_stop);
         }
     }
     if (route == RouteType::Usual) {
-        auto tmp = result.stops;
+        auto tmp = bus.stops;
         for (int i = tmp.size() - 2; i >= 0; --i) {
-            result.stops.push_back(result.stops[i]);
+            bus.stops.push_back(bus.stops[i]);
         }
     }
-    buses_.push_back(std::move(result));
+    buses_.push_back(std::move(bus));
     busname_to_bus_[buses_.back().name] = &buses_.back();
     for (std::string_view name : stops) {
         auto found_stop = FindStop(name);

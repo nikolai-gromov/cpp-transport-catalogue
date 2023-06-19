@@ -13,8 +13,6 @@ cmath
 /home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/input_reader.cpp
 input_reader.h
 /home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/input_reader.h
-stat_reader.h
-/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/stat_reader.h
 algorithm
 -
 unordered_map
@@ -37,6 +35,8 @@ input_reader.h
 /home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/input_reader.h
 transport_catalogue.h
 /home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/transport_catalogue.h
+stat_reader.h
+/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/stat_reader.h
 
 /home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/stat_reader.cpp
 stat_reader.h
@@ -49,8 +49,6 @@ set
 -
 
 /home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/stat_reader.h
-input_reader.h
-/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/input_reader.h
 transport_catalogue.h
 /home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/transport_catalogue.h
 string_view

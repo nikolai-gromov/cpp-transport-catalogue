@@ -1,14 +1,12 @@
 #include "input_reader.h"
 #include "transport_catalogue.h"
+#include "stat_reader.h"
 
 int main() {
-    using namespace transport_catalogue;
-    using namespace query;
-
-    TransportCatalogue catalog;
-    InputReader reader;
-    reader.ParsingInputData();
-    reader.ParsingInputData();
-    reader.Load(catalog);
+    transport_catalogue::TransportCatalogue catalog;
+    transport_catalogue::input_reader::ReaderLoader readerloader;
+    readerloader.ParsingRequestsForFillingInTheCatalog(std::cin);
+    readerloader.Load(catalog);
+    transport_catalogue::stat_reader::ParsingCatalogRequests(catalog, std::cin);
     return 0;
 }
