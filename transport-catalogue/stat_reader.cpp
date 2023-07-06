@@ -10,7 +10,7 @@ namespace stat_reader
 {
 using namespace std::string_literals;
 
-void OutputStopsData(TransportCatalogue& catalog, std::string_view name, std::ostream& output) {
+void PrintStopsData(std::ostream& output, std::string_view name, TransportCatalogue& catalog) {
     std::set<std::string_view> found_buses = catalog.GetBusesByStop(name);
     if (catalog.FindStop(name) != nullptr) {
         if (found_buses.size() != 0) {
@@ -31,21 +31,20 @@ void OutputStopsData(TransportCatalogue& catalog, std::string_view name, std::os
     }
 }
 
-void OutputRouteData(TransportCatalogue& catalog, std::string_view name, std::ostream& output) {
+void PrintRouteData(std::ostream& output, std::string_view name, TransportCatalogue& catalog) {
     if (catalog.FindBus(name) != nullptr) {
         BusInfo data = catalog.GetBusInfo(catalog.FindBus(name));
-        output << "Bus "s << name << ": "s << data.stops_on_route
-            << " stops on route, "s << data.unique_stops
-            << " unique stops, "s << std::setprecision(6)
-            << data.distance << " route length, "s
-            << std::setprecision(6) << data.curvature
-            << " curvature"s << std::endl;
+        output << "Bus "s << name << ": "s
+            << data.stops_on_route << " stops on route, "s
+            << data.unique_stops << " unique stops, "s
+            << std::setprecision(6) << data.distance << " route length, "s
+            << std::setprecision(6) << data.curvature << " curvature"s << std::endl;
     } else {
         output << "Bus "s << name << ": not found"s << std::endl;
     }
 }
 
-void ParsingCatalogRequests(TransportCatalogue& catalog, std::istream& input) {
+void ParsingCatalogRequests(std::istream& input, TransportCatalogue& catalog) {
     int query_count;
     input >> query_count;
     input.ignore(1);
@@ -62,12 +61,12 @@ void ParsingCatalogRequests(TransportCatalogue& catalog, std::istream& input) {
         if (type_query == "Stop") {
             auto pos_space = query.find(' ');
             std::string stopname = query.substr((pos_space + 1), (query.size() - (pos_space + 1)));
-            OutputStopsData(catalog, stopname, std::cout);
+            PrintStopsData(std::cout, stopname, catalog);
         }
         if (type_query == "Bus") {
             auto pos_space = query.find(' ');
             std::string busname = query.substr((pos_space + 1), (query.size() - (pos_space + 1)));
-            OutputRouteData(catalog, busname, std::cout);
+            PrintRouteData(std::cout, busname, catalog);
         }
     }
 }

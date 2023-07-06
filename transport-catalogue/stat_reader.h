@@ -7,10 +7,10 @@ namespace transport_catalogue
 {
 namespace stat_reader
 {
-void OutputStopsData(TransportCatalogue& catalog, std::string_view name);
+void PrintStopsData(std::ostream& output, std::string_view name, TransportCatalogue& catalog);
 
-void OutputRouteData(TransportCatalogue& catalog, std::string_view name);
+void PrintRouteData(std::ostream& output, std::string_view name, TransportCatalogue& catalog);
 
-void ParsingCatalogRequests(TransportCatalogue& catalog, std::istream& input);
+void ParsingCatalogRequests(std::istream& input, TransportCatalogue& catalog);
 }
 }

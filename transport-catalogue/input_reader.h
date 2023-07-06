@@ -1,5 +1,6 @@
 #pragma once
 #include "transport_catalogue.h"
+#include "geo.h"
 
 #include <iostream>
 #include <string>
@@ -10,37 +11,29 @@ namespace transport_catalogue
 {
 namespace input_reader
 {
-inline std::vector<std::string_view> Split(std::string_view str, char c);
 
-enum class QueryType {
-    Stop,
-    Bus
+struct Queries {
+    std::vector<std::string> bus;
+    std::vector<std::string> stop;
 };
 
-struct CatalogQueries {
-    QueryType type;
-    std::string name;
-    std::pair<std::string_view, std::string_view> coordinates;
-    std::vector<std::string_view> list_of_stops;
-    std::vector<std::pair<std::uint64_t, std::string_view>> distance_to_stop;
-    RouteType route_type = RouteType::Usual;
-    std::string raw_query;
-    std::string pro_query;
+std::string_view GetName(std::string_view query);
 
-    std::vector<std::string_view> ParsingRouteTypeHandling(std::vector<std::string_view> input_vec);
+std::vector<std::string_view> SplitStopData(std::string_view str, char c);
 
-    void ParsingQueryTypeHandling(std::string input);
-};
+void GetDistance(std::string_view stopname, std::vector<std::string_view> stop_data, TransportCatalogue& catalog);
 
-class ReaderLoader {
-public:
-    void ParsingRequestsForFillingInTheCatalog(std::istream& input);
-    void Load(TransportCatalogue& catalog);
-    void LoadData(TransportCatalogue& catalog, CatalogQueries queries, bool flag = false);
+void FillStop(std::string_view query, TransportCatalogue& catalog, bool flag = false);
 
-private:
-    std::vector<CatalogQueries> queries_;
-};
+std::vector<std::string_view> SplitBusData(std::string_view str, char c);
+
+std::vector<std::string_view> GetStops(std::string_view query);
+
+Bus FillBus(std::string_view query, TransportCatalogue& catalog);
+
+std::string_view GetQueryType(std::string_view query);
+
+void Load(std::istream& input, TransportCatalogue& catalog);
 
 }
 }

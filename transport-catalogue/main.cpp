@@ -4,9 +4,7 @@
 
 int main() {
     transport_catalogue::TransportCatalogue catalog;
-    transport_catalogue::input_reader::ReaderLoader readerloader;
-    readerloader.ParsingRequestsForFillingInTheCatalog(std::cin);
-    readerloader.Load(catalog);
-    transport_catalogue::stat_reader::ParsingCatalogRequests(catalog, std::cin);
+    transport_catalogue::input_reader::Load(std::cin, catalog);
+    transport_catalogue::stat_reader::ParsingCatalogRequests(std::cin, catalog);
     return 0;
 }

@@ -1,0 +1,100 @@
+Stop gtm9BlpE8bAkxfHCPiz67Xs: buses 5 876c40RmluF 9THbMZ g8lBQzlD7lU A CA4KwLqpD0Bdy8y Ho7KF8bipjJly8TvvQ IvfFmKUcoScGJoa QqYkn8IywhPaaiq T ZGcqi3Xf8e ccXiI8whRdUwuoN8aGzvJs h4dpxtRSvC3Pous hfmcApyZc By wSX9kMv5NmodztTukEuRAkf8P ylZX9iJ
+Stop MeOzi4ywCT1W7xFOA5h: buses 876c40RmluF 8IMIhyC H 9THbMZ g8lBQzlD7lU CA4KwLqpD0Bdy8y CLdIBR23KKi5GB E 1OVSsLHihqtd63i2lCn GP yyAOz8yU6L3iGD3J Ho7KF8bipjJly8TvvQ IsDUvLNIkmvq T2NCy ccXiI8whRdUwuoN8aGzvJs hfmcApyZc By iFl6j8fP jo7ZoTNM1dMooS 2uAA7tvo2 lU mqee sA50azC97OMPt3BPX ylZX9iJ
+Bus 5EZG F4wgz0atFqks5rrPegD: not found
+Bus njbuySC7: 7 stops on route, 6 unique stops, 4.81409e+06 route length, 40.6328 curvature
+Stop G aCz5wMUxrPww: buses 7xe4JG25AgVPhayb3ckP2 876c40RmluF 9fnSkeGyf CA4KwLqpD0Bdy8y DclOWysOJ F7MHFi7g098LQ Gc Ho7KF8bipjJly8TvvQ JZ QqYkn8IywhPaaiq QuuzKJ2 RzJIG fePEeTYg8fcRO1 TPuGrJgeLR hfmcApyZc By k2Ol4xQL9f4FAIFvCsOiz nRWzl3IWxFu sA50azC97OMPt3BPX vrPjRFJy1Q4Aq QGU woNoTDr ylZX9iJ
+Bus 63hAwSNTBCqBs7w4WTNy: not found
+Bus T2NCy: 69 stops on route, 56 unique stops, 3.09308e+07 route length, 25.3239 curvature
+Bus E 1OVSsLHihqtd63i2lCn: 67 stops on route, 56 unique stops, 3.43329e+07 route length, 29.49 curvature
+Bus l RVk1teUAfkd4L4: not found
+Bus slVu9PKqeSgD5: not found
+Stop Tb: buses 1zGhjjAhlDbcO CDy 50T3FDpDQnb25eWd2Kh21Mwk 8mRzr DPEKv6xITDR22aygS18OpSDpb Ho7KF8bipjJly8TvvQ IvfFmKUcoScGJoa T2NCy ZZYK2jFJr7eqd10Eqt bQ4vsTvWhXlQEi dy68oy5FxyD6etpsp fePEeTYg8fcRO1 TPuGrJgeLR hfmcApyZc By hscF mh wliQ9DLIHn woNoTDr yiKTH6e6u50I kgvlXG ylZX9iJ
+Stop XmnTYd9cySp: buses 1zGhjjAhlDbcO CDy 6iqtx 7xe4JG25AgVPhayb3ckP2 876c40RmluF BbT8dsmoICIgtPa CA4KwLqpD0Bdy8y DclOWysOJ E 1OVSsLHihqtd63i2lCn IvfFmKUcoScGJoa QqYkn8IywhPaaiq QuuzKJ2 T Wf1W7QJtoSL e8XqEyqRsJSYUgIpvNBTH iFl6j8fP nPFuS0guFw2 8Awf oMNQfYULMXAz oWV sA50azC97OMPt3BPX ylZX9iJ
+Bus ExytcdlsuX9IghSX: 61 stops on route, 27 unique stops, 3.10195e+07 route length, 24.9976 curvature
+Bus Qa8VuzI7oR7ZNgZLia: not found
+Bus Q: 77 stops on route, 35 unique stops, 3.74283e+07 route length, 26.7221 curvature
+Bus Vuh84BYoDH: 17 stops on route, 16 unique stops, 8.10476e+06 route length, 24.6717 curvature
+Stop iu pUFj82Cqn3yAk8Vs2z6O80: buses 1zGhjjAhlDbcO CDy A ExytcdlsuX9IghSX HK46 IvfFmKUcoScGJoa JZ Vuh84BYoDH Wf1W7QJtoSL XU hfmcApyZc By iBAbvykyUAujN iFl6j8fP mh wliQ9DLIHn ylZX9iJ
+Bus qpkmFDw2Y7db2fx5be: 99 stops on route, 83 unique stops, 5.31239e+07 route length, 32.548 curvature
+Stop h230yZ: buses 1zGhjjAhlDbcO CDy ACMMek DclOWysOJ E 1OVSsLHihqtd63i2lCn I1wMnrwRq8weJZ IvfFmKUcoScGJoa J jy ybF0CGIORQhqp JZ T Wf1W7QJtoSL ZGcqi3Xf8e gBjmm65BVfcWBKmwi5 iBAbvykyUAujN jHb5Y6Cb6XHYNShNaiRv3 k2Ol4xQL9f4FAIFvCsOiz mh qpkmFDw2Y7db2fx5be s4
+Bus yiKTH6e6u50I kgvlXG: 23 stops on route, 12 unique stops, 1.45282e+07 route length, 35.4052 curvature
+Bus RzJIG: 48 stops on route, 41 unique stops, 2.50429e+07 route length, 31.0296 curvature
+Bus GP yyAOz8yU6L3iGD3J: 87 stops on route, 42 unique stops, 3.98963e+07 route length, 25.7406 curvature
+Bus jHb5Y6Cb6XHYNShNaiRv3: 25 stops on route, 23 unique stops, 1.35408e+07 route length, 34.5156 curvature
+Bus hfmcApyZc By: 81 stops on route, 37 unique stops, 3.94162e+07 route length, 29.0604 curvature
+Bus 3R7Q1I9ACzzX: 9 stops on route, 5 unique stops, 3.96484e+06 route length, 34.0518 curvature
+Bus hscF: 56 stops on route, 48 unique stops, 2.996e+07 route length, 25.5063 curvature
+Bus mqee: 9 stops on route, 5 unique stops, 4.056e+06 route length, 23.2161 curvature
+Stop 3lVTIeuB: not found
+Stop 9LiABQ2In YGFeuzTi: not found
+Bus p9T: not found
+Stop uLsKK4me8agfFBLTYK9xIhh: buses 1I A E 1OVSsLHihqtd63i2lCn QqYkn8IywhPaaiq QuuzKJ2 T2NCy bQ4vsTvWhXlQEi iBAbvykyUAujN n njbuySC7 oMNQfYULMXAz ukHDNN4j 1aj5vB7TJsGhg woNoTDr ylZX9iJ
+Stop oC: buses 1zGhjjAhlDbcO CDy 5iV7fnbmGmcCbqdZ 876c40RmluF 9fnSkeGyf BbT8dsmoICIgtPa CA4KwLqpD0Bdy8y CLdIBR23KKi5GB GP yyAOz8yU6L3iGD3J ImWTJwA2psmogMYVbKQXiHk IvfFmKUcoScGJoa JZ Q T2NCy XU ZGcqi3Xf8e iFl6j8fP t5scblYTnfH6syDjvpdMOxY wSX9kMv5NmodztTukEuRAkf8P woNoTDr
+Bus oGk4GA2TBWQw8TkiPvY: 61 stops on route, 30 unique stops, 3.05636e+07 route length, 23.5035 curvature
+Stop XB7Y552buTT: not found
+Stop C YdccGQZU6gbJL0mXX6IToE: buses 0NTTuU1 1zGhjjAhlDbcO CDy 876c40RmluF 8IMIhyC H A CLdIBR23KKi5GB F7MHFi7g098LQ JZ QqYkn8IywhPaaiq T2NCy XU YpJGTMVVxNbdhGsuQAI ccXiI8whRdUwuoN8aGzvJs dy68oy5FxyD6etpsp euhGbo7axB6RBy gBjmm65BVfcWBKmwi5 h4dpxtRSvC3Pous hscF iBAbvykyUAujN mh nPFuS0guFw2 8Awf nRWzl3IWxFu qpkmFDw2Y7db2fx5be rxg vrPjRFJy1Q4Aq QGU woNoTDr yiKTH6e6u50I kgvlXG ylZX9iJ
+Bus HK46: 51 stops on route, 44 unique stops, 2.47798e+07 route length, 26.5121 curvature
+Bus 9THbMZ g8lBQzlD7lU: 45 stops on route, 37 unique stops, 1.91887e+07 route length, 22.9163 curvature
+Bus M m0qzbZrVEEx: not found
+Stop g7DDR15eHCcokUx8RRf9: buses 6iqtx 876c40RmluF A CA4KwLqpD0Bdy8y GP yyAOz8yU6L3iGD3J ImWTJwA2psmogMYVbKQXiHk JZ T2NCy XU ZGcqi3Xf8e dy68oy5FxyD6etpsp e8XqEyqRsJSYUgIpvNBTH jo7ZoTNM1dMooS 2uAA7tvo2 mh n oGk4GA2TBWQw8TkiPvY wliQ9DLIHn
+Bus IsDUvLNIkmvq: 49 stops on route, 24 unique stops, 2.42712e+07 route length, 33.1581 curvature
+Bus N5: 7 stops on route, 4 unique stops, 4.03576e+06 route length, 45.5257 curvature
+Stop f4mV: buses 9THbMZ g8lBQzlD7lU A CA4KwLqpD0Bdy8y DclOWysOJ HK46 IvfFmKUcoScGJoa QTSVWwI QqYkn8IywhPaaiq T cu26cCHpA uQni57edrhGaNi e8XqEyqRsJSYUgIpvNBTH fePEeTYg8fcRO1 TPuGrJgeLR hscF oMNQfYULMXAz oWV s4
+Bus rxg: 41 stops on route, 21 unique stops, 1.88487e+07 route length, 27.52 curvature
+Bus 9fnSkeGyf: 23 stops on route, 21 unique stops, 1.21403e+07 route length, 28.9144 curvature
+Stop Adb3: buses 1zGhjjAhlDbcO CDy 876c40RmluF 9fnSkeGyf CA4KwLqpD0Bdy8y ExytcdlsuX9IghSX Ho7KF8bipjJly8TvvQ JZ QuuzKJ2 T2NCy UCmn6j3DA2CkQTDROXaOSG Vuh84BYoDH lU s4 wliQ9DLIHn
+Stop m719VY5Tx: buses 1zGhjjAhlDbcO CDy 25vBFZ1cF9yETC9mlHu6i 6iqtx 876c40RmluF A Ho7KF8bipjJly8TvvQ IvfFmKUcoScGJoa J jy ybF0CGIORQhqp JZ QqYkn8IywhPaaiq QuuzKJ2 RzJIG T T2NCy UCmn6j3DA2CkQTDROXaOSG h4dpxtRSvC3Pous k2Ol4xQL9f4FAIFvCsOiz woNoTDr
+Bus 1I: 19 stops on route, 10 unique stops, 7.78872e+06 route length, 20.8792 curvature
+Stop XVjTb5dCz6BEe6biYFU80srv: not found
+Stop kpt: buses 3sxdcqW0TlrW 6iqtx 876c40RmluF A DPEKv6xITDR22aygS18OpSDpb I1wMnrwRq8weJZ QTSVWwI QuuzKJ2 T XU mh n nPFuS0guFw2 8Awf rxg ukHDNN4j 1aj5vB7TJsGhg yiKTH6e6u50I kgvlXG
+Bus JZ: 80 stops on route, 70 unique stops, 4.0978e+07 route length, 27.8079 curvature
+Stop 3AJxTNnY8w: buses 1zGhjjAhlDbcO CDy 6iqtx 7xe4JG25AgVPhayb3ckP2 8IMIhyC H BbT8dsmoICIgtPa GP yyAOz8yU6L3iGD3J ImWTJwA2psmogMYVbKQXiHk JZ QuuzKJ2 T ZGcqi3Xf8e bQ4vsTvWhXlQEi euhGbo7axB6RBy fePEeTYg8fcRO1 TPuGrJgeLR hfmcApyZc By nRWzl3IWxFu oMNQfYULMXAz s4 wFxqwa8rly woNoTDr ylZX9iJ
+Stop Rz: buses 1zGhjjAhlDbcO CDy 5UefmiSd1fEd32w0b89 9THbMZ g8lBQzlD7lU A E 1OVSsLHihqtd63i2lCn ExytcdlsuX9IghSX HK46 ImWTJwA2psmogMYVbKQXiHk QuuzKJ2 T2NCy UCmn6j3DA2CkQTDROXaOSG iBAbvykyUAujN k2Ol4xQL9f4FAIFvCsOiz qpkmFDw2Y7db2fx5be
+Bus hscF: 56 stops on route, 48 unique stops, 2.996e+07 route length, 25.5063 curvature
+Stop QdPEP6: buses 25vBFZ1cF9yETC9mlHu6i A E 1OVSsLHihqtd63i2lCn IvfFmKUcoScGJoa JZ Q T2NCy XU YpJGTMVVxNbdhGsuQAI e8XqEyqRsJSYUgIpvNBTH fePEeTYg8fcRO1 TPuGrJgeLR hl7xRZX mh nRWzl3IWxFu oWV qpkmFDw2Y7db2fx5be wliQ9DLIHn ylZX9iJ
+Bus hfmcApyZc By: 81 stops on route, 37 unique stops, 3.94162e+07 route length, 29.0604 curvature
+Bus iBAbvykyUAujN: 86 stops on route, 66 unique stops, 4.56861e+07 route length, 31.1619 curvature
+Bus F7MHFi7g098LQ: 31 stops on route, 16 unique stops, 1.38546e+07 route length, 24.4999 curvature
+Bus Vuh84BYoDH: 17 stops on route, 16 unique stops, 8.10476e+06 route length, 24.6717 curvature
+Stop jg6oInTF0IOQjanfDYimaM: buses 6iqtx CA4KwLqpD0Bdy8y IvfFmKUcoScGJoa RzJIG XU fePEeTYg8fcRO1 TPuGrJgeLR h4dpxtRSvC3Pous hscF k2Ol4xQL9f4FAIFvCsOiz n nPFuS0guFw2 8Awf nRWzl3IWxFu wliQ9DLIHn woNoTDr
+Stop h1OTf: buses 876c40RmluF 9THbMZ g8lBQzlD7lU 9fnSkeGyf CA4KwLqpD0Bdy8y E 1OVSsLHihqtd63i2lCn GP yyAOz8yU6L3iGD3J IsDUvLNIkmvq IvfFmKUcoScGJoa JZ Q T2NCy ccXiI8whRdUwuoN8aGzvJs euhGbo7axB6RBy hscF iFl6j8fP mh wFxqwa8rly ylZX9iJ
+Stop XiIL1rrRfmLsCvs4t1 C4AzoT: buses 876c40RmluF Ho7KF8bipjJly8TvvQ ImWTJwA2psmogMYVbKQXiHk IvfFmKUcoScGJoa JZ Q QTSVWwI ZZYK2jFJr7eqd10Eqt fePEeTYg8fcRO1 TPuGrJgeLR hl7xRZX s4 wliQ9DLIHn
+Stop ZB0MvNUt6IYAMY0Ov: buses 9THbMZ g8lBQzlD7lU A F7MHFi7g098LQ GP yyAOz8yU6L3iGD3J YpJGTMVVxNbdhGsuQAI euhGbo7axB6RBy iBAbvykyUAujN iFl6j8fP k2Ol4xQL9f4FAIFvCsOiz mh nPFuS0guFw2 8Awf qpkmFDw2Y7db2fx5be sA50azC97OMPt3BPX
+Stop 9kHYrxYT6UCUGcLH: buses 8IMIhyC H A CA4KwLqpD0Bdy8y ExytcdlsuX9IghSX GP yyAOz8yU6L3iGD3J ImWTJwA2psmogMYVbKQXiHk IsDUvLNIkmvq IvfFmKUcoScGJoa JZ RzJIG T2NCy hscF nRWzl3IWxFu oMNQfYULMXAz qpkmFDw2Y7db2fx5be rxg woNoTDr ylZX9iJ
+Stop 9kHYrxYT6UCUGcLH: buses 8IMIhyC H A CA4KwLqpD0Bdy8y ExytcdlsuX9IghSX GP yyAOz8yU6L3iGD3J ImWTJwA2psmogMYVbKQXiHk IsDUvLNIkmvq IvfFmKUcoScGJoa JZ RzJIG T2NCy hscF nRWzl3IWxFu oMNQfYULMXAz qpkmFDw2Y7db2fx5be rxg woNoTDr ylZX9iJ
+Bus Q: 77 stops on route, 35 unique stops, 3.74283e+07 route length, 26.7221 curvature
+Bus k2Ol4xQL9f4FAIFvCsOiz: 27 stops on route, 23 unique stops, 1.46429e+07 route length, 38.9342 curvature
+Bus T: 97 stops on route, 45 unique stops, 5.08492e+07 route length, 26.7579 curvature
+Stop g7DDR15eHCcokUx8RRf9: buses 6iqtx 876c40RmluF A CA4KwLqpD0Bdy8y GP yyAOz8yU6L3iGD3J ImWTJwA2psmogMYVbKQXiHk JZ T2NCy XU ZGcqi3Xf8e dy68oy5FxyD6etpsp e8XqEyqRsJSYUgIpvNBTH jo7ZoTNM1dMooS 2uAA7tvo2 mh n oGk4GA2TBWQw8TkiPvY wliQ9DLIHn
+Bus 5iV7fnbmGmcCbqdZ: 7 stops on route, 6 unique stops, 2.83135e+06 route length, 20.0893 curvature
+Stop HUb6xd4aaSJ01lo0ABt: buses 1zGhjjAhlDbcO CDy 9THbMZ g8lBQzlD7lU A CA4KwLqpD0Bdy8y CLdIBR23KKi5GB HK46 IsDUvLNIkmvq JZ QuuzKJ2 RzJIG e8XqEyqRsJSYUgIpvNBTH euhGbo7axB6RBy ylZX9iJ
+Bus mh: 84 stops on route, 69 unique stops, 4.0588e+07 route length, 28.5069 curvature
+Stop Nd3eT03: buses 0d6 DclOWysOJ DxsuVIKzZQ E 1OVSsLHihqtd63i2lCn IsDUvLNIkmvq IvfFmKUcoScGJoa J jy ybF0CGIORQhqp QTSVWwI XU hscF oWV rxg s4 ylZX9iJ
+Stop H7jPxa nvmS 9W3aqhqpq9ttz: buses 1zGhjjAhlDbcO CDy 7xe4JG25AgVPhayb3ckP2 CA4KwLqpD0Bdy8y DPEKv6xITDR22aygS18OpSDpb F7MHFi7g098LQ fePEeTYg8fcRO1 TPuGrJgeLR gBjmm65BVfcWBKmwi5 hl7xRZX hscF jo7ZoTNM1dMooS 2uAA7tvo2 nPFuS0guFw2 8Awf s4 wliQ9DLIHn ylZX9iJ
+Bus ACMMek: 13 stops on route, 7 unique stops, 4.84635e+06 route length, 21.6074 curvature
+Bus 8IMIhyC H: 63 stops on route, 53 unique stops, 3.21653e+07 route length, 29.0437 curvature
+Bus sA50azC97OMPt3BPX: 68 stops on route, 56 unique stops, 3.59281e+07 route length, 26.6241 curvature
+Stop 9kHYrxYT6UCUGcLH: buses 8IMIhyC H A CA4KwLqpD0Bdy8y ExytcdlsuX9IghSX GP yyAOz8yU6L3iGD3J ImWTJwA2psmogMYVbKQXiHk IsDUvLNIkmvq IvfFmKUcoScGJoa JZ RzJIG T2NCy hscF nRWzl3IWxFu oMNQfYULMXAz qpkmFDw2Y7db2fx5be rxg woNoTDr ylZX9iJ
+Stop kv8A5AKGj iN: buses 1zGhjjAhlDbcO CDy 9THbMZ g8lBQzlD7lU CA4KwLqpD0Bdy8y CLdIBR23KKi5GB DclOWysOJ GP yyAOz8yU6L3iGD3J HK46 Ho7KF8bipjJly8TvvQ ImWTJwA2psmogMYVbKQXiHk IvfFmKUcoScGJoa JZ RzJIG cu26cCHpA uQni57edrhGaNi dy68oy5FxyD6etpsp fePEeTYg8fcRO1 TPuGrJgeLR iBAbvykyUAujN ixbiNlw qpkmFDw2Y7db2fx5be sA50azC97OMPt3BPX ukHDNN4j 1aj5vB7TJsGhg
+Stop 7pyxD HFSz1P: buses 7xe4JG25AgVPhayb3ckP2 Ho7KF8bipjJly8TvvQ J jy ybF0CGIORQhqp QuuzKJ2 Vuh84BYoDH XU hscF iFl6j8fP qpkmFDw2Y7db2fx5be ukHDNN4j 1aj5vB7TJsGhg
+Stop gtm9BlpE8bAkxfHCPiz67Xs: buses 5 876c40RmluF 9THbMZ g8lBQzlD7lU A CA4KwLqpD0Bdy8y Ho7KF8bipjJly8TvvQ IvfFmKUcoScGJoa QqYkn8IywhPaaiq T ZGcqi3Xf8e ccXiI8whRdUwuoN8aGzvJs h4dpxtRSvC3Pous hfmcApyZc By wSX9kMv5NmodztTukEuRAkf8P ylZX9iJ
+Bus GP yyAOz8yU6L3iGD3J: 87 stops on route, 42 unique stops, 3.98963e+07 route length, 25.7406 curvature
+Stop G3o0bW: buses 0d6 1zGhjjAhlDbcO CDy 5UefmiSd1fEd32w0b89 7xe4JG25AgVPhayb3ckP2 A ACMMek ExytcdlsuX9IghSX JZ QuuzKJ2 T2NCy YpJGTMVVxNbdhGsuQAI ccXiI8whRdUwuoN8aGzvJs fePEeTYg8fcRO1 TPuGrJgeLR hscF mh qpkmFDw2Y7db2fx5be woNoTDr
+Stop bSi9y: buses 1zGhjjAhlDbcO CDy 25vBFZ1cF9yETC9mlHu6i 7xe4JG25AgVPhayb3ckP2 8IMIhyC H A CLdIBR23KKi5GB F7MHFi7g098LQ GP yyAOz8yU6L3iGD3J HK46 J jy ybF0CGIORQhqp Q QTSVWwI bQ4vsTvWhXlQEi fePEeTYg8fcRO1 TPuGrJgeLR nRWzl3IWxFu qpkmFDw2Y7db2fx5be sA50azC97OMPt3BPX wliQ9DLIHn ylZX9iJ
+Stop WjQdnFYUMNKbuiO3m3xd6V7Yi: not found
+Bus e8XqEyqRsJSYUgIpvNBTH: 71 stops on route, 35 unique stops, 2.61934e+07 route length, 20.01 curvature
+Stop qaqYVmrgqP76mxDYebu08xF8E: buses 0d6 1zGhjjAhlDbcO CDy 7xe4JG25AgVPhayb3ckP2 876c40RmluF 8IMIhyC H CA4KwLqpD0Bdy8y E 1OVSsLHihqtd63i2lCn IvfFmKUcoScGJoa T bQ4vsTvWhXlQEi euhGbo7axB6RBy fePEeTYg8fcRO1 TPuGrJgeLR lU mh wSX9kMv5NmodztTukEuRAkf8P
+Stop HnD0ZD0LB: buses 876c40RmluF DclOWysOJ ExytcdlsuX9IghSX Ho7KF8bipjJly8TvvQ JZ N5 T ZGcqi3Xf8e ZZYK2jFJr7eqd10Eqt fePEeTYg8fcRO1 TPuGrJgeLR gBjmm65BVfcWBKmwi5 iBAbvykyUAujN ixbiNlw mh oWV qpkmFDw2Y7db2fx5be s4 sA50azC97OMPt3BPX woNoTDr
+Stop RSF8kvnN4wTTbttJLpS ai: not found
+Stop HEqLSPgckxtYaWNg3NpI: not found
+Bus g1PwpCKV: not found
+Stop XOf 9Qz F1IW1zArJ6lr O7: not found
+Bus woNoTDr: 79 stops on route, 65 unique stops, 3.88768e+07 route length, 27.5003 curvature
+Stop zZCAR1D85mS iWkyr: buses 9fnSkeGyf Ho7KF8bipjJly8TvvQ J jy ybF0CGIORQhqp QqYkn8IywhPaaiq RzJIG UCmn6j3DA2CkQTDROXaOSG Vuh84BYoDH ZGcqi3Xf8e euhGbo7axB6RBy fePEeTYg8fcRO1 TPuGrJgeLR gBjmm65BVfcWBKmwi5 hl7xRZX iBAbvykyUAujN mh oMNQfYULMXAz woNoTDr
+Stop HCOENmseqUum77yOWi7: buses 5 6iqtx 876c40RmluF 9THbMZ g8lBQzlD7lU CA4KwLqpD0Bdy8y F7MHFi7g098LQ Ho7KF8bipjJly8TvvQ IvfFmKUcoScGJoa QqYkn8IywhPaaiq QuuzKJ2 RzJIG e8XqEyqRsJSYUgIpvNBTH jHb5Y6Cb6XHYNShNaiRv3 oWV ukHDNN4j 1aj5vB7TJsGhg woNoTDr ylZX9iJ
+Stop 9aYUGS1K957JzuIWK9UK: not found
+Bus YqM2 oqzUK5YXoL: not found
+Bus GP yyAOz8yU6L3iGD3J: 87 stops on route, 42 unique stops, 3.98963e+07 route length, 25.7406 curvature
+Bus 25vBFZ1cF9yETC9mlHu6i: 51 stops on route, 26 unique stops, 2.41541e+07 route length, 22.8381 curvature
+Stop Sfskshp83VkmueW7t: buses 8IMIhyC H 9THbMZ g8lBQzlD7lU DxsuVIKzZQ GP yyAOz8yU6L3iGD3J Ho7KF8bipjJly8TvvQ IvfFmKUcoScGJoa QTSVWwI ZGcqi3Xf8e ZZYK2jFJr7eqd10Eqt fePEeTYg8fcRO1 TPuGrJgeLR h4dpxtRSvC3Pous iBAbvykyUAujN jHb5Y6Cb6XHYNShNaiRv3 oGk4GA2TBWQw8TkiPvY ukHDNN4j 1aj5vB7TJsGhg
+Bus ixbiNlw: 17 stops on route, 9 unique stops, 1.13982e+07 route length, 29.7575 curvature

@@ -15,12 +15,12 @@ input_reader.h
 /home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/input_reader.h
 algorithm
 -
-unordered_map
--
 
 /home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/input_reader.h
 transport_catalogue.h
 /home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/transport_catalogue.h
+geo.h
+/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/geo.h
 iostream
 -
 string
@@ -63,16 +63,16 @@ algorithm
 /home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/transport_catalogue.h
 geo.h
 /home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/geo.h
-string
--
-string_view
--
-vector
--
 deque
 -
 set
 -
+string
+-
+string_view
+-
 unordered_map
+-
+vector
 -
 

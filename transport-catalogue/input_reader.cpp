@@ -1,188 +1,145 @@
 #include "input_reader.h"
 
 #include <algorithm>
-#include <unordered_map>
 
 namespace transport_catalogue
 {
 namespace input_reader
 {
-inline std::vector<std::string_view> Split(std::string_view str, char c) {
+
+std::string_view GetName(std::string_view query) {
+    auto begin_name = query.find(' ') + 1;
+    auto end_name = query.find(':') - begin_name;
+    return query.substr(begin_name, end_name);
+}
+
+std::vector<std::string_view> SplitStopData(std::string_view str, char c) {
     std::vector<std::string_view> result;
-    auto pos = 0;
+    int64_t pos_end = str.npos;
     while (true) {
-        auto pos_c = str.find(c, pos);
-        result.push_back(pos_c == str.npos ? str.substr(pos) : str.substr(pos, pos_c - pos));
-        if (pos_c == str.npos) {
-            break;
+        int64_t pos_c = str.find(c);
+        result.push_back(str.substr(0, pos_c));
+        if (pos_c != pos_end) {
+            str.remove_prefix(pos_c + 2);
         } else {
-            pos = pos_c + 1;
+            break;
         }
     }
     return result;
 }
 
-std::vector<std::string_view> CatalogQueries::ParsingRouteTypeHandling(std::vector<std::string_view> input_vec) {
-    std::vector<std::string_view> tmp, result;
-    if (input_vec.size() > 3) {
-        if (pro_query.find('-') != std::string::npos) {
-            route_type = RouteType::Usual;
-            tmp = Split(pro_query, '-');
-        }
-        if (pro_query.find('>') != std::string::npos) {
-            route_type = RouteType::Ring;
-            tmp = Split(pro_query, '>');
+void GetDistance(std::string_view stopname, std::vector<std::string_view> stop_data, TransportCatalogue& catalog) {
+    std::string_view distance, stop;
+    for (auto i = 0u; i < stop_data.size(); ++i) {
+        auto pos_m = stop_data[i].find('m');
+        distance = stop_data[i].substr(0, pos_m);
+        auto pos_t = stop_data[i].find('t');
+        stop = stop_data[i].substr((pos_t + 3), ((stop_data[i].size()) - (pos_t + 3)));
+        catalog.SetDistanceBetweenStops(stopname, std::stod(std::string(distance)), stop);
+    }
+    stop_data.clear();
+}
+
+void FillStop(std::string_view query, TransportCatalogue& catalog, bool flag) {
+    Stop result;
+    if (flag != true) {
+        std::string_view stopname = GetName(query);
+        result.name = std::string(stopname);
+        query.remove_prefix((stopname.size() + 7));
+        auto stop_data = SplitStopData(query, ',');
+        std::string_view latitude, longitude;
+        latitude = stop_data[0];
+        stop_data.erase(stop_data.begin());
+        longitude = stop_data[0];
+        stop_data.erase(stop_data.begin());
+        result.coordinates.lat = std::stod(std::string(latitude));
+        result.coordinates.lng = std::stod(std::string(longitude));
+        catalog.AddStop(result);
+    } else {
+        std::string_view stopname = GetName(query);
+        query.remove_prefix((stopname.size() + 7));
+        auto stop_data = SplitStopData(query, ',');
+        if (2u < stop_data.size()) {
+            stop_data.erase(stop_data.begin());
+            stop_data.erase(stop_data.begin());
+            GetDistance(stopname, stop_data, catalog);
         }
     }
-    for (size_t i = 0; i < tmp.size(); ++i) {
-        while ((!tmp[i].empty()) && tmp[i].front() == ' ')
-        tmp[i].remove_prefix(1);
-        while ((!tmp[i].empty()) && tmp[i].back() == ' ')
-        tmp[i].remove_suffix(1);
-        result.push_back(tmp[i]);
+}
+
+std::vector<std::string_view> SplitBusData(std::string_view str, char c) {
+    std::vector<std::string_view> result;
+    int64_t pos_end = str.npos;
+    while (true) {
+        int64_t pos_c = str.find(c);
+        result.push_back(str.substr(0, pos_c - 1));
+        if (pos_c != pos_end) {
+            str.remove_prefix(pos_c + 2);
+        } else {
+            break;
+        }
     }
     return result;
 }
 
-void CatalogQueries::ParsingQueryTypeHandling(std::string input) {
-    raw_query = std::move(input);
-    auto input_vec = Split(raw_query, ' ');
-    auto it_begin_type = raw_query.find_first_not_of(' ');
-    auto it_end_type  = raw_query.find(' ', it_begin_type);
-
-    static const std::unordered_map<std::string, QueryType> types_of_query = {{ "Stop", QueryType::Stop }, { "Bus", QueryType::Bus }};
-    std::string type_query = { raw_query.begin() + it_begin_type, raw_query.begin() + it_end_type };
-
-    switch (types_of_query.at(type_query))
-    {
-    case QueryType::Stop:
-        type = QueryType::Stop;
-        if (auto pos = raw_query.find(':'); pos != std::string::npos) {
-            for (std::size_t i = it_end_type; i < pos; ++i) {
-                name += raw_query[i];
-            }
-            while ((!name.empty()) && name.front() == ' ')
-            name.erase(name.begin());
-            pro_query = raw_query.substr((pos + 2), (raw_query.size() - (pos + 2)));
-            auto tmp = Split(pro_query, ',');
-            std::string_view str, stop;
-            std::uint64_t distance;
-            if (tmp.size() > 2) {
-                while ((!tmp[1].empty()) && tmp[1].front() == ' ')
-                tmp[1].remove_prefix(1);
-                coordinates = { tmp[0], tmp[1] };
-                for (std::size_t i = 2; i != tmp.size(); ++i) {
-                    while ((!tmp[i].empty()) && tmp[i].front() == ' ')
-                    tmp[i].remove_prefix(1);
-                    auto pos_m = tmp[i].find('m');
-                    str = tmp[i].substr(0, pos_m);
-                    distance = std::stoi(static_cast<std::string>(str));
-                    auto pos_t = tmp[i].find('t');
-                    stop = tmp[i].substr((pos_t + 2), tmp[i].size());
-                    while ((!tmp[i].empty()) && stop.front() == ' ')
-                    stop.remove_prefix(1);
-                    distance_to_stop.push_back({ distance, stop });
-                }
-            } else {
-                while ((!tmp[1].empty()) && tmp[1].front() == ' ')
-                tmp[1].remove_prefix(1);
-                coordinates = { tmp[0], tmp[1] };
-            }
-        } else {
-            for (size_t i = it_end_type; i < raw_query.size(); ++i) {
-                name += raw_query[i];
-            }
-            while ((!name.empty()) && name.front() == ' ')
-            name.erase(name.begin());
-            while ((!name.empty()) && name.back() == ' ')
-            name.erase(name.end() - 1);
-            break;
+std::vector<std::string_view> GetStops(std::string_view query) {
+    std::vector<std::string_view> result;
+    if (auto pos = query.find('-'); pos != std::string::npos) {
+        result = SplitBusData(query, '-');
+        for (int i = (static_cast<int>(result.size()) - 2); i >= 0; --i) {
+            result.push_back(result[i]);
         }
-        break;
-    case QueryType::Bus:
-        type = QueryType::Bus;
-        if (auto pos = raw_query.find(':'); pos != std::string::npos) {
-            for (std::size_t i = it_end_type; i < pos; ++i) {
-                name += raw_query[i];
-            }
-            while ((!name.empty()) && name.front() == ' ')
-            name.erase(name.begin());
-            pro_query = raw_query.substr((pos + 2), (raw_query.size() - (pos + 2)));
-            list_of_stops = ParsingRouteTypeHandling(input_vec);
-        } else {
-            for (std::size_t i = it_end_type; i < raw_query.size(); ++i) {
-                name += raw_query[i];
-            }
-            while ((!name.empty()) && name.front() == ' ')
-            name.erase(name.begin());
-            while ((!name.empty()) && name.back() == ' ')
-            name.erase(name.end() - 1);
-            break;
-        }
-        break;
+    } else {
+        result = SplitBusData(query, '>');
     }
+    return result;
 }
 
-void ReaderLoader::ParsingRequestsForFillingInTheCatalog(std::istream& input) {
+Bus FillBus(std::string_view query, TransportCatalogue& catalog) {
+    Bus result;
+    std::string_view busname = GetName(query);
+    result.name = std::string(busname);
+    query.remove_prefix((busname.size() + 6));
+    for (std::string_view stop : GetStops(query)) {
+        result.stops.push_back(catalog.FindStop(stop));
+    }
+    return result;
+}
+
+std::string_view GetQueryType(std::string_view query) {
+    auto end_type = query.find(' ');
+    return query.substr(0, end_type);
+}
+
+void Load(std::istream& input, TransportCatalogue& catalog) {
     int query_count;
     input >> query_count;
     input.ignore(1);
     std::string query;
+    Queries queries;
     for (int i = 0; i < query_count; ++i) {
         std::getline(input, query);
-        CatalogQueries queries;
-        queries.ParsingQueryTypeHandling(std::move(query));
-        queries_.push_back(std::move(queries));
+        std::string_view type_query = GetQueryType(query);
+        queries.bus.reserve(query_count);
+        queries.stop.reserve(query_count);
+        if (type_query == "Bus") {
+            queries.bus.push_back(std::move(query));
+        } else {
+            queries.stop.push_back(std::move(query));
+        }
     }
+    for (auto query : queries.stop) {
+        FillStop(query, catalog);
+    }
+    for (auto query : queries.stop) {
+        FillStop(query, catalog, true);
+    }
+    queries.stop.clear();
+    for (auto query : queries.bus) {
+        catalog.AddBus(FillBus(query, catalog));
+    }
+    queries.bus.clear();
 }
 
-void ReaderLoader::Load(TransportCatalogue& catalog) {
-    auto it_pro = std::partition(queries_.begin(), queries_.end(), [](CatalogQueries queries)
-    {
-        return !queries.pro_query.empty();
-    });
-    auto it_stops = std::partition(queries_.begin(), it_pro, [](CatalogQueries queries)
-    {
-        return queries.type == QueryType::Stop;
-    });
-    for (auto it = queries_.begin(); it != it_stops; ++it) {
-        ReaderLoader::LoadData(catalog, *it, true);
-    }
-    for (auto it = queries_.begin(); it != it_stops; ++it) {
-        ReaderLoader::LoadData(catalog, *it);
-    }
-    for (auto it = it_stops; it != it_pro; ++it) {
-        ReaderLoader::LoadData(catalog, *it, true);
-    }
-    for (auto it = it_pro; it != queries_.end(); ++it) {
-        ReaderLoader::LoadData(catalog, *it, true);
-    }
-}
-
-void ReaderLoader::LoadData(TransportCatalogue& catalog, CatalogQueries queries, bool flag) {
-    switch (queries.type)
-    {
-    case QueryType::Stop:
-        if (queries.coordinates != std::pair<std::string_view, std::string_view>()) {
-            std::string lat = {queries.coordinates.first.begin(), queries.coordinates.first.end()};
-            std::string lng = {queries.coordinates.second.begin(), queries.coordinates.second.end()};
-            if (flag == true) {
-                catalog.AddStop(queries.name, std::stod(lat), std::stod(lng));
-            } else {
-                if (!queries.distance_to_stop.empty()) {
-                    for (auto [distance, stop] : queries.distance_to_stop) {
-                        catalog.SetDistanceBetweenStops(queries.name, distance, stop);
-                    }
-                }
-            }
-        }
-        break;
-    case QueryType::Bus:
-        if (!queries.list_of_stops.empty()) {
-            catalog.AddBus(queries.name, queries.route_type, queries.list_of_stops);
-        }
-        break;
-    }
-}
 }
 }
