@@ -2,33 +2,37 @@
 
 #include <algorithm>
 
-namespace transport_catalogue
-{
-void TransportCatalogue::AddStop(Stop stop) {
+namespace transport_catalogue {
+
+void TransportCatalogue::AddStop(domain::Stop stop) {
     stops_.push_back(stop);
     stopname_to_stop_[stops_.back().name] = &stops_.back();
 }
 
-const Stop* TransportCatalogue::FindStop(std::string_view name) const {
+StopPtr TransportCatalogue::FindStop(std::string_view name) const {
     if (auto is_stop = stopname_to_stop_.find(name); is_stop != stopname_to_stop_.end()) {
         return stopname_to_stop_.at(name);
     }
     return nullptr;
 }
 
-void TransportCatalogue::AddBus(Bus bus) {
+void TransportCatalogue::AddBus(domain::Bus bus) {
     buses_.push_back(bus);
     busname_to_bus_[buses_.back().name] = &buses_.back();
 }
 
-const Bus* TransportCatalogue::FindBus(std::string_view name) const {
+BusPtr TransportCatalogue::FindBus(std::string_view name) const {
     if (auto is_bus = busname_to_bus_.find(name); is_bus != busname_to_bus_.end()) {
         return busname_to_bus_.at(name);
     }
     return nullptr;
 }
 
-std::set<std::string_view> TransportCatalogue::GetBusesByStop(std::string_view name) const {
+const std::unordered_map<std::string_view, BusPtr>& TransportCatalogue::GetBuses() const {
+    return  busname_to_bus_;
+}
+
+const std::set<std::string_view> TransportCatalogue::GetBusesByStop(std::string_view name) const {
     std::set<std::string_view> result;
     if (nullptr != FindStop(name)) {
         std::for_each(
@@ -45,7 +49,7 @@ std::set<std::string_view> TransportCatalogue::GetBusesByStop(std::string_view n
     return result;
 }
 
-void TransportCatalogue::SetDistanceBetweenStops(std::string_view name_first, const double distance, std::string_view name_second) {
+void TransportCatalogue::SetDistanceBetweenStops(std::string_view name_first, double distance, std::string_view name_second) {
     auto stop_first_ptr = FindStop(name_first);
     auto stop_second_ptr = FindStop(name_second);
     if (stop_first_ptr != nullptr && stop_second_ptr != nullptr) {
@@ -54,12 +58,12 @@ void TransportCatalogue::SetDistanceBetweenStops(std::string_view name_first, co
     }
 }
 
-double TransportCatalogue::GetDistanceBetweenStops(const Stop* stop_first_ptr, const Stop* stop_second_ptr) const {
+double TransportCatalogue::GetDistanceBetweenStops(StopPtr stop_first_ptr, StopPtr stop_second_ptr) const {
     return distance_between_stops_.at({ stop_first_ptr, stop_second_ptr });
 }
 
-BusInfo TransportCatalogue::GetBusInfo(const Bus* bus) const {
-    BusInfo data;
+BusStat TransportCatalogue::GetBusStat(BusPtr bus) const {
+    domain::BusStat data;
     data.stops_on_route = bus->stops.size();
     auto tmp = bus->stops;
     std::sort(tmp.begin(), tmp.end());
@@ -73,4 +77,5 @@ BusInfo TransportCatalogue::GetBusInfo(const Bus* bus) const {
     data.curvature = data.distance / data.distance_coordinates;
     return data;
 }
-}
+
+} // namespace transport_catalogue

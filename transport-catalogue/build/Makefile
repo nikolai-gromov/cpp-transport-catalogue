@@ -145,6 +145,33 @@ transport_catalogue/fast:
 	$(MAKE) -f CMakeFiles/transport_catalogue.dir/build.make CMakeFiles/transport_catalogue.dir/build
 .PHONY : transport_catalogue/fast
 
+geo.o: geo.cpp.o
+
+.PHONY : geo.o
+
+# target to build an object file
+geo.cpp.o:
+	$(MAKE) -f CMakeFiles/transport_catalogue.dir/build.make CMakeFiles/transport_catalogue.dir/geo.cpp.o
+.PHONY : geo.cpp.o
+
+geo.i: geo.cpp.i
+
+.PHONY : geo.i
+
+# target to preprocess a source file
+geo.cpp.i:
+	$(MAKE) -f CMakeFiles/transport_catalogue.dir/build.make CMakeFiles/transport_catalogue.dir/geo.cpp.i
+.PHONY : geo.cpp.i
+
+geo.s: geo.cpp.s
+
+.PHONY : geo.s
+
+# target to generate assembly for a file
+geo.cpp.s:
+	$(MAKE) -f CMakeFiles/transport_catalogue.dir/build.make CMakeFiles/transport_catalogue.dir/geo.cpp.s
+.PHONY : geo.cpp.s
+
 input_reader.o: input_reader.cpp.o
 
 .PHONY : input_reader.o
@@ -171,6 +198,60 @@ input_reader.s: input_reader.cpp.s
 input_reader.cpp.s:
 	$(MAKE) -f CMakeFiles/transport_catalogue.dir/build.make CMakeFiles/transport_catalogue.dir/input_reader.cpp.s
 .PHONY : input_reader.cpp.s
+
+json.o: json.cpp.o
+
+.PHONY : json.o
+
+# target to build an object file
+json.cpp.o:
+	$(MAKE) -f CMakeFiles/transport_catalogue.dir/build.make CMakeFiles/transport_catalogue.dir/json.cpp.o
+.PHONY : json.cpp.o
+
+json.i: json.cpp.i
+
+.PHONY : json.i
+
+# target to preprocess a source file
+json.cpp.i:
+	$(MAKE) -f CMakeFiles/transport_catalogue.dir/build.make CMakeFiles/transport_catalogue.dir/json.cpp.i
+.PHONY : json.cpp.i
+
+json.s: json.cpp.s
+
+.PHONY : json.s
+
+# target to generate assembly for a file
+json.cpp.s:
+	$(MAKE) -f CMakeFiles/transport_catalogue.dir/build.make CMakeFiles/transport_catalogue.dir/json.cpp.s
+.PHONY : json.cpp.s
+
+json_reader.o: json_reader.cpp.o
+
+.PHONY : json_reader.o
+
+# target to build an object file
+json_reader.cpp.o:
+	$(MAKE) -f CMakeFiles/transport_catalogue.dir/build.make CMakeFiles/transport_catalogue.dir/json_reader.cpp.o
+.PHONY : json_reader.cpp.o
+
+json_reader.i: json_reader.cpp.i
+
+.PHONY : json_reader.i
+
+# target to preprocess a source file
+json_reader.cpp.i:
+	$(MAKE) -f CMakeFiles/transport_catalogue.dir/build.make CMakeFiles/transport_catalogue.dir/json_reader.cpp.i
+.PHONY : json_reader.cpp.i
+
+json_reader.s: json_reader.cpp.s
+
+.PHONY : json_reader.s
+
+# target to generate assembly for a file
+json_reader.cpp.s:
+	$(MAKE) -f CMakeFiles/transport_catalogue.dir/build.make CMakeFiles/transport_catalogue.dir/json_reader.cpp.s
+.PHONY : json_reader.cpp.s
 
 main.o: main.cpp.o
 
@@ -199,6 +280,60 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/transport_catalogue.dir/build.make CMakeFiles/transport_catalogue.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+map_renderer.o: map_renderer.cpp.o
+
+.PHONY : map_renderer.o
+
+# target to build an object file
+map_renderer.cpp.o:
+	$(MAKE) -f CMakeFiles/transport_catalogue.dir/build.make CMakeFiles/transport_catalogue.dir/map_renderer.cpp.o
+.PHONY : map_renderer.cpp.o
+
+map_renderer.i: map_renderer.cpp.i
+
+.PHONY : map_renderer.i
+
+# target to preprocess a source file
+map_renderer.cpp.i:
+	$(MAKE) -f CMakeFiles/transport_catalogue.dir/build.make CMakeFiles/transport_catalogue.dir/map_renderer.cpp.i
+.PHONY : map_renderer.cpp.i
+
+map_renderer.s: map_renderer.cpp.s
+
+.PHONY : map_renderer.s
+
+# target to generate assembly for a file
+map_renderer.cpp.s:
+	$(MAKE) -f CMakeFiles/transport_catalogue.dir/build.make CMakeFiles/transport_catalogue.dir/map_renderer.cpp.s
+.PHONY : map_renderer.cpp.s
+
+request_handler.o: request_handler.cpp.o
+
+.PHONY : request_handler.o
+
+# target to build an object file
+request_handler.cpp.o:
+	$(MAKE) -f CMakeFiles/transport_catalogue.dir/build.make CMakeFiles/transport_catalogue.dir/request_handler.cpp.o
+.PHONY : request_handler.cpp.o
+
+request_handler.i: request_handler.cpp.i
+
+.PHONY : request_handler.i
+
+# target to preprocess a source file
+request_handler.cpp.i:
+	$(MAKE) -f CMakeFiles/transport_catalogue.dir/build.make CMakeFiles/transport_catalogue.dir/request_handler.cpp.i
+.PHONY : request_handler.cpp.i
+
+request_handler.s: request_handler.cpp.s
+
+.PHONY : request_handler.s
+
+# target to generate assembly for a file
+request_handler.cpp.s:
+	$(MAKE) -f CMakeFiles/transport_catalogue.dir/build.make CMakeFiles/transport_catalogue.dir/request_handler.cpp.s
+.PHONY : request_handler.cpp.s
+
 stat_reader.o: stat_reader.cpp.o
 
 .PHONY : stat_reader.o
@@ -225,6 +360,33 @@ stat_reader.s: stat_reader.cpp.s
 stat_reader.cpp.s:
 	$(MAKE) -f CMakeFiles/transport_catalogue.dir/build.make CMakeFiles/transport_catalogue.dir/stat_reader.cpp.s
 .PHONY : stat_reader.cpp.s
+
+svg.o: svg.cpp.o
+
+.PHONY : svg.o
+
+# target to build an object file
+svg.cpp.o:
+	$(MAKE) -f CMakeFiles/transport_catalogue.dir/build.make CMakeFiles/transport_catalogue.dir/svg.cpp.o
+.PHONY : svg.cpp.o
+
+svg.i: svg.cpp.i
+
+.PHONY : svg.i
+
+# target to preprocess a source file
+svg.cpp.i:
+	$(MAKE) -f CMakeFiles/transport_catalogue.dir/build.make CMakeFiles/transport_catalogue.dir/svg.cpp.i
+.PHONY : svg.cpp.i
+
+svg.s: svg.cpp.s
+
+.PHONY : svg.s
+
+# target to generate assembly for a file
+svg.cpp.s:
+	$(MAKE) -f CMakeFiles/transport_catalogue.dir/build.make CMakeFiles/transport_catalogue.dir/svg.cpp.s
+.PHONY : svg.cpp.s
 
 transport_catalogue.o: transport_catalogue.cpp.o
 
@@ -264,15 +426,33 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... package"
 	@echo "... transport_catalogue"
+	@echo "... geo.o"
+	@echo "... geo.i"
+	@echo "... geo.s"
 	@echo "... input_reader.o"
 	@echo "... input_reader.i"
 	@echo "... input_reader.s"
+	@echo "... json.o"
+	@echo "... json.i"
+	@echo "... json.s"
+	@echo "... json_reader.o"
+	@echo "... json_reader.i"
+	@echo "... json_reader.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... map_renderer.o"
+	@echo "... map_renderer.i"
+	@echo "... map_renderer.s"
+	@echo "... request_handler.o"
+	@echo "... request_handler.i"
+	@echo "... request_handler.s"
 	@echo "... stat_reader.o"
 	@echo "... stat_reader.i"
 	@echo "... stat_reader.s"
+	@echo "... svg.o"
+	@echo "... svg.i"
+	@echo "... svg.s"
 	@echo "... transport_catalogue.o"
 	@echo "... transport_catalogue.i"
 	@echo "... transport_catalogue.s"

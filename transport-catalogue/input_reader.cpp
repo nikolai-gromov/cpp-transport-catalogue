@@ -2,10 +2,9 @@
 
 #include <algorithm>
 
-namespace transport_catalogue
-{
-namespace input_reader
-{
+namespace transport_catalogue {
+
+namespace input_reader {
 
 std::string_view GetName(std::string_view query) {
     auto begin_name = query.find(' ') + 1;
@@ -41,7 +40,7 @@ void GetDistance(std::string_view stopname, std::vector<std::string_view> stop_d
 }
 
 void FillStop(std::string_view query, TransportCatalogue& catalog, bool flag) {
-    Stop result;
+    domain::Stop result;
     if (flag != true) {
         std::string_view stopname = GetName(query);
         result.name = std::string(stopname);
@@ -95,8 +94,8 @@ std::vector<std::string_view> GetStops(std::string_view query) {
     return result;
 }
 
-Bus FillBus(std::string_view query, TransportCatalogue& catalog) {
-    Bus result;
+domain::Bus FillBus(std::string_view query, TransportCatalogue& catalog) {
+    domain::Bus result;
     std::string_view busname = GetName(query);
     result.name = std::string(busname);
     query.remove_prefix((busname.size() + 6));
@@ -111,14 +110,14 @@ std::string_view GetQueryType(std::string_view query) {
     return query.substr(0, end_type);
 }
 
-void Load(std::istream& input, TransportCatalogue& catalog) {
+void Load(std::istream& in, TransportCatalogue& catalog) {
     int query_count;
-    input >> query_count;
-    input.ignore(1);
+    in >> query_count;
+    in.ignore(1);
     std::string query;
     Queries queries;
     for (int i = 0; i < query_count; ++i) {
-        std::getline(input, query);
+        std::getline(in, query);
         std::string_view type_query = GetQueryType(query);
         queries.bus.reserve(query_count);
         queries.stop.reserve(query_count);
@@ -141,5 +140,5 @@ void Load(std::istream& input, TransportCatalogue& catalog) {
     queries.bus.clear();
 }
 
-}
-}
+} // namespace input_reader
+} // namespace transport_catalogue

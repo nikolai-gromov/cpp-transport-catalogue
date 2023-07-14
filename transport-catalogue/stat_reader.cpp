@@ -4,55 +4,55 @@
 #include <iostream>
 #include <set>
 
-namespace transport_catalogue
-{
-namespace stat_reader
-{
+namespace transport_catalogue {
+
+namespace stat_reader {
+
 using namespace std::string_literals;
 
-void PrintStopsData(std::ostream& output, std::string_view name, TransportCatalogue& catalog) {
-    std::set<std::string_view> found_buses = catalog.GetBusesByStop(name);
+void PrintBusesByStop(std::ostream& out, std::string_view name, const TransportCatalogue& catalog) {
+    const auto found_buses = catalog.GetBusesByStop(name);
     if (catalog.FindStop(name) != nullptr) {
         if (found_buses.size() != 0) {
-            output << "Stop "s << name << ": buses "s;
+            out << "Stop "s << name << ": buses "s;
             for (auto it = found_buses.begin(); it != found_buses.end(); ++it) {
                 if (std::next(it) != found_buses.end()) {
-                    output << *it << " "s;
+                    out << (*it) << " "s;
                 } else {
-                    output << *it;
+                    out << (*it);
                 }
             }
-            output << std::endl;
+            out << std::endl;
         } else {
-            output << "Stop "s << name << ": no buses"s << std::endl;
+            out << "Stop "s << name << ": no buses"s << std::endl;
         }
     } else {
-        output << "Stop "s << name << ": not found"s << std::endl;
+        out << "Stop "s << name << ": not found"s << std::endl;
     }
 }
 
-void PrintRouteData(std::ostream& output, std::string_view name, TransportCatalogue& catalog) {
+void PrintBusStat(std::ostream& out, std::string_view name, const TransportCatalogue& catalog) {
     if (catalog.FindBus(name) != nullptr) {
-        BusInfo data = catalog.GetBusInfo(catalog.FindBus(name));
-        output << "Bus "s << name << ": "s
-            << data.stops_on_route << " stops on route, "s
-            << data.unique_stops << " unique stops, "s
-            << std::setprecision(6) << data.distance << " route length, "s
-            << std::setprecision(6) << data.curvature << " curvature"s << std::endl;
+        const auto stat = catalog.GetBusStat(catalog.FindBus(name));
+        out << "Bus "s << name << ": "s
+            << stat.stops_on_route << " stops on route, "s
+            << stat.unique_stops << " unique stops, "s
+            << std::setprecision(6) << stat.distance << " route length, "s
+            << std::setprecision(6) << stat.curvature << " curvature"s << std::endl;
     } else {
-        output << "Bus "s << name << ": not found"s << std::endl;
+        out << "Bus "s << name << ": not found"s << std::endl;
     }
 }
 
-void ParsingCatalogRequests(std::istream& input, TransportCatalogue& catalog) {
+void ParsingCatalogRequests(std::istream& in, const TransportCatalogue& catalog) {
     int query_count;
-    input >> query_count;
-    input.ignore(1);
+    in >> query_count;
+    in.ignore(1);
     std::string query;
     std::vector<std::string> queries;
     queries.reserve(query_count);
     for (int i = 0; i < query_count; ++i) {
-        std::getline(input, query);
+        std::getline(in, query);
         queries.push_back(std::move(query));
     }
     for (auto query : queries) {
@@ -61,14 +61,15 @@ void ParsingCatalogRequests(std::istream& input, TransportCatalogue& catalog) {
         if (type_query == "Stop") {
             auto pos_space = query.find(' ');
             std::string stopname = query.substr((pos_space + 1), (query.size() - (pos_space + 1)));
-            PrintStopsData(std::cout, stopname, catalog);
+            PrintBusesByStop(std::cout, stopname, catalog);
         }
         if (type_query == "Bus") {
             auto pos_space = query.find(' ');
             std::string busname = query.substr((pos_space + 1), (query.size() - (pos_space + 1)));
-            PrintRouteData(std::cout, busname, catalog);
+            PrintBusStat(std::cout, busname, catalog);
         }
     }
 }
-}
-}
+
+} // namespace stat_reader
+} // namespace transport_catalogue

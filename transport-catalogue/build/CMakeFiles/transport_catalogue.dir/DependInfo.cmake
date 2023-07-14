@@ -4,9 +4,15 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/geo.cpp" "/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/build/CMakeFiles/transport_catalogue.dir/geo.cpp.o"
   "/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/input_reader.cpp" "/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/build/CMakeFiles/transport_catalogue.dir/input_reader.cpp.o"
+  "/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/json.cpp" "/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/build/CMakeFiles/transport_catalogue.dir/json.cpp.o"
+  "/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/json_reader.cpp" "/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/build/CMakeFiles/transport_catalogue.dir/json_reader.cpp.o"
   "/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/main.cpp" "/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/build/CMakeFiles/transport_catalogue.dir/main.cpp.o"
+  "/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/map_renderer.cpp" "/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/build/CMakeFiles/transport_catalogue.dir/map_renderer.cpp.o"
+  "/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/request_handler.cpp" "/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/build/CMakeFiles/transport_catalogue.dir/request_handler.cpp.o"
   "/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/stat_reader.cpp" "/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/build/CMakeFiles/transport_catalogue.dir/stat_reader.cpp.o"
+  "/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/svg.cpp" "/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/build/CMakeFiles/transport_catalogue.dir/svg.cpp.o"
   "/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/transport_catalogue.cpp" "/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/build/CMakeFiles/transport_catalogue.dir/transport_catalogue.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
