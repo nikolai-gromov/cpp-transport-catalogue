@@ -6,8 +6,6 @@
 #include <iostream>
 #include <sstream>
 
-using namespace std::literals;
-
 int main() {
     transport_catalogue::TransportCatalogue catalogue;
     transport_catalogue::renderer::MapRenderer renderer;

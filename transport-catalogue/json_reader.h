@@ -2,8 +2,8 @@
 #include "json.h"
 #include "domain.h"
 #include "transport_catalogue.h"
-#include "request_handler.h"
 #include "map_renderer.h"
+#include "request_handler.h"
 
 #include <iostream>
 
@@ -16,11 +16,15 @@ struct Requests {
     std::vector<json::Node> stops;
 };
 
-void PrintBusStat(std::ostream& out, const json::Dict& request, request_handler::RequestHandler& request_handler, bool comma = false);
+json::Dict GetBusStatDict(const json::Dict& request, request_handler::RequestHandler& request_handler);
 
-void PrintBusesByStop(std::ostream& out, const json::Dict& request, request_handler::RequestHandler& request_handler, TransportCatalogue& catalogue, bool comma = false);
+json::Dict GetBusesByStop(const std::string& stop_name, request_handler::RequestHandler& request_handler);
 
-void PrintRenderMap(std::ostream& out, const json::Dict& request, request_handler::RequestHandler& request_handler, bool comma = false);
+json::Dict GetBusesByStopDict(const json::Dict& request, request_handler::RequestHandler& request_handler, TransportCatalogue& catalogue);
+
+json::Dict GetRenderMap(request_handler::RequestHandler& request_handler);
+
+json::Dict GetRenderMapDict(const json::Dict& request, request_handler::RequestHandler& request_handler);
 
 void ParsingStatRequest(std::ostream& out, const json::Node& request_body, request_handler::RequestHandler& request_handler, TransportCatalogue& catalogue);
 

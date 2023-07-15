@@ -12,94 +12,80 @@ namespace json_reader {
 
 using namespace std::literals;
 
-
-void PrintBusStat(std::ostream& out, const json::Dict& request, request_handler::RequestHandler& request_handler, bool comma) {
-    if (const auto stat = request_handler.GetBusStat(request.at("name").AsString()); stat) {
-        out << "    {\n";
-        out << "        \"curvature\": " << (*stat).curvature << ",\n";
-        out << "        \"request_id\": " << request.at("id").AsInt() << ",\n";
-        out << "        \"route_length\": " << (*stat).distance << ",\n";
-        out << "        \"stop_count\": " << (*stat).stops_on_route << ",\n";
-        out << "        \"unique_stop_count\": " << (*stat).unique_stops << "\n";
+json::Dict GetBusStatDict(const json::Dict& request, request_handler::RequestHandler& request_handler) {
+    json::Dict response;
+    const std::string bus_name = request.at("name").AsString();
+    if (const auto stat = request_handler.GetBusStat(bus_name); stat) {
+        response["curvature"] = (*stat).curvature;;
+        response["request_id"] = request.at("id").AsInt();
+        response["route_length"] = (*stat).distance;
+        response["stop_count"] = (*stat).stops_on_route;
+        response["unique_stop_count"] = (*stat).unique_stops;
     } else {
-        out << "    {\n";
-        out << "        \"error_message\": " << "\"not found\"," << "\n";
-        out << "        \"request_id\": " << request.at("id").AsInt() << "\n";
+        response["error_message"] = "not found";
+        response["request_id"] = request.at("id").AsInt();
     }
-    if (!comma) {
-        out << "    }" << std::endl;
-    } else {
-        out << "    }," << std::endl;
-    }
+    return response;
 }
 
-void PrintBusesByStop(std::ostream& out, const json::Dict& request, request_handler::RequestHandler& request_handler, TransportCatalogue& catalogue, bool comma) {
-    if (nullptr != catalogue.FindStop(request.at("name").AsString())) {
-        const auto buses = request_handler.GetBusesByStop(request.at("name").AsString());
-        out << "    {\n";
-        out << "        \"buses\": [\n";
-        out << "            ";
-            for (auto it = buses.begin(); it != buses.end(); ++it) {
-                if (std::next(it) != buses.end()) {
-                    out << "\"" << (*it) << "\", ";
-                } else {
-                    out << "\"" << (*it) << "\"";
-                }
-            }
-        out << "\n";
-        out << "        ],\n";
-        out << "        \"request_id\": " << request.at("id").AsInt() << "\n";
-    } else {
-        out << "    {\n";
-        out << "        \"error_message\": " << "\"not found\"," << "\n";
-        out << "        \"request_id\": " << request.at("id").AsInt() << "\n";
+json::Dict GetBusesByStop(const std::string& stop_name, request_handler::RequestHandler& request_handler) {
+    json::Dict result;
+    json::Array buses_array;
+    const auto buses = request_handler.GetBusesByStop(stop_name);
+    for (auto it = buses.begin(); it != buses.end(); ++it) {
+        buses_array.push_back(std::string(*it));
     }
-    if (!comma) {
-        out << "    }" << std::endl;
-    } else {
-        out << "    }," << std::endl;
-    }
+    result["buses"] = buses_array;
+    return result;
 }
 
-void PrintRenderMap(std::ostream& out, const json::Dict& request, request_handler::RequestHandler& request_handler, bool comma) {
+
+json::Dict GetBusesByStopDict(const json::Dict& request, request_handler::RequestHandler& request_handler, TransportCatalogue& catalogue) {
+    json::Dict response;
+    json::Dict error_response;
+    const std::string stop_name = request.at("name").AsString();
+    if (nullptr != catalogue.FindStop(stop_name)) {
+        response = GetBusesByStop(stop_name, request_handler);
+        response["request_id"] = request.at("id").AsInt();
+        return response;
+    }
+    error_response["error_message"] = "not found";
+    error_response["request_id"] = request.at("id").AsInt();
+    return error_response;
+}
+
+json::Dict GetRenderMap(request_handler::RequestHandler& request_handler) {
+    json::Dict result;
     std::ostringstream output;
     request_handler.RenderMap().Render(output);
-    out << "    {\n";
-    out << "        \"map\": ";
-    json::Print(json::Document(output.str()), out);
-    out << ",\n";
-    out << "        \"request_id\": " << request.at("id").AsInt() << "\n";
-    if (!comma) {
-        out << "    }" << std::endl;
-    } else {
-        out << "    }," << std::endl;
-    }
+    result["map"] = output.str();
+    return result;
+}
+
+
+json::Dict GetRenderMapDict(const json::Dict& request, request_handler::RequestHandler& request_handler) {
+    json::Dict response;
+    response = GetRenderMap(request_handler);
+    response["request_id"] = request.at("id").AsInt();
+    return response;
 }
 
 void ParsingStatRequest(std::ostream& out, const json::Node& request_body, request_handler::RequestHandler& request_handler, TransportCatalogue& catalogue) {
-    int size = static_cast<int>(request_body.AsArray().size());
-    out << "["<< std::endl;
+    const int size = static_cast<int>(request_body.AsArray().size());
+    json::Array responses;
     for (int i = 0; i < size; ++i) {
         json::Dict request = request_body.AsArray().at(i).AsMap();
-        if (i < (size - 1)) {
-            if (request.at("type").AsString() == "Bus"s) {
-                PrintBusStat(out, request, request_handler, true);
-            } else if (request.at("type").AsString() == "Stop"s) {
-                PrintBusesByStop(out, request, request_handler, catalogue, true);
-            } else if (request.at("type").AsString() == "Map"s) {
-                PrintRenderMap(out, request, request_handler, true);
-            }
-        } else if (i == (size - 1)) {
-            if (request.at("type").AsString() == "Bus"s) {
-                PrintBusStat(out, request, request_handler);
-            } else if (request.at("type").AsString() == "Stop"s) {
-                PrintBusesByStop(out, request, request_handler, catalogue);
-            } else if (request.at("type").AsString() == "Map"s) {
-                PrintRenderMap(out, request, request_handler);
-            }
+        json::Dict response;
+        if (request.at("type").AsString() == "Bus"s) {
+            response = GetBusStatDict(request, request_handler);
+        } else if (request.at("type").AsString() == "Stop"s) {
+            response = GetBusesByStopDict(request, request_handler, catalogue);
+        } else if (request.at("type").AsString() == "Map"s) {
+            response = GetRenderMapDict(request, request_handler);
         }
+        responses.push_back(response);
     }
-    out << "]" << std::endl;
+    json::Print(json::Document(responses), out);
 }
 
 std::vector<std::string_view> GetStops(const json::Dict& bus_dict) {

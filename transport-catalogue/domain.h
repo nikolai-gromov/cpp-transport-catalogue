@@ -18,11 +18,11 @@ struct Bus {
 };
 
 struct BusStat {
-    std::size_t stops_on_route = 0;
-    std::size_t unique_stops = 0;
+    int stops_on_route = 0;
+    int unique_stops = 0;
     double distance_coordinates = 0.;
     double distance = 0.;
     double curvature = 0.;
 };
 
-}
+} // namespace domain

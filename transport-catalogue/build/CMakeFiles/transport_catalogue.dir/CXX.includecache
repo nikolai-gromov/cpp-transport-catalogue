@@ -14,12 +14,6 @@ string
 vector
 -
 
-/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/geo.cpp
-geo.h
-/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/geo.h
-cmath
--
-
 /home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/geo.h
 
 /home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/input_reader.cpp
@@ -41,10 +35,6 @@ string_view
 -
 vector
 -
-
-/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/json.cpp
-json.h
-/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/json.h
 
 /home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/json.h
 iostream
@@ -79,10 +69,10 @@ domain.h
 /home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/domain.h
 transport_catalogue.h
 /home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/transport_catalogue.h
-request_handler.h
-/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/request_handler.h
 map_renderer.h
 /home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/map_renderer.h
+request_handler.h
+/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/request_handler.h
 iostream
 -
 
@@ -159,10 +149,6 @@ transport_catalogue.h
 /home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/transport_catalogue.h
 string_view
 -
-
-/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/svg.cpp
-svg.h
-/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/svg.h
 
 /home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/svg.h
 cstdint
