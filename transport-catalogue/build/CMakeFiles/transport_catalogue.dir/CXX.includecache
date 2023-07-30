@@ -36,6 +36,12 @@ string_view
 vector
 -
 
+/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/json.cpp
+json.h
+/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/json.h
+iterator
+-
+
 /home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/json.h
 iostream
 -
@@ -44,6 +50,18 @@ map
 string
 -
 variant
+-
+vector
+-
+
+/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/json_builder.cpp
+json_builder.h
+/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/json_builder.h
+
+/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/json_builder.h
+json.h
+/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/json.h
+string
 -
 vector
 -
@@ -65,6 +83,8 @@ vector
 /home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/json_reader.h
 json.h
 /home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/json.h
+json_builder.h
+/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/json_builder.h
 domain.h
 /home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/domain.h
 transport_catalogue.h
@@ -88,12 +108,6 @@ request_handler.h
 iostream
 -
 sstream
--
-
-/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/map_renderer.cpp
-map_renderer.h
-/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/map_renderer.h
-map
 -
 
 /home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/map_renderer.h

@@ -226,6 +226,33 @@ json.cpp.s:
 	$(MAKE) -f CMakeFiles/transport_catalogue.dir/build.make CMakeFiles/transport_catalogue.dir/json.cpp.s
 .PHONY : json.cpp.s
 
+json_builder.o: json_builder.cpp.o
+
+.PHONY : json_builder.o
+
+# target to build an object file
+json_builder.cpp.o:
+	$(MAKE) -f CMakeFiles/transport_catalogue.dir/build.make CMakeFiles/transport_catalogue.dir/json_builder.cpp.o
+.PHONY : json_builder.cpp.o
+
+json_builder.i: json_builder.cpp.i
+
+.PHONY : json_builder.i
+
+# target to preprocess a source file
+json_builder.cpp.i:
+	$(MAKE) -f CMakeFiles/transport_catalogue.dir/build.make CMakeFiles/transport_catalogue.dir/json_builder.cpp.i
+.PHONY : json_builder.cpp.i
+
+json_builder.s: json_builder.cpp.s
+
+.PHONY : json_builder.s
+
+# target to generate assembly for a file
+json_builder.cpp.s:
+	$(MAKE) -f CMakeFiles/transport_catalogue.dir/build.make CMakeFiles/transport_catalogue.dir/json_builder.cpp.s
+.PHONY : json_builder.cpp.s
+
 json_reader.o: json_reader.cpp.o
 
 .PHONY : json_reader.o
@@ -435,6 +462,9 @@ help:
 	@echo "... json.o"
 	@echo "... json.i"
 	@echo "... json.s"
+	@echo "... json_builder.o"
+	@echo "... json_builder.i"
+	@echo "... json_builder.s"
 	@echo "... json_reader.o"
 	@echo "... json_reader.i"
 	@echo "... json_reader.s"

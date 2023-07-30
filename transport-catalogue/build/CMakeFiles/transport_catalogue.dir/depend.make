@@ -13,9 +13,14 @@ CMakeFiles/transport_catalogue.dir/input_reader.cpp.o: ../transport_catalogue.h
 CMakeFiles/transport_catalogue.dir/json.cpp.o: ../json.cpp
 CMakeFiles/transport_catalogue.dir/json.cpp.o: ../json.h
 
+CMakeFiles/transport_catalogue.dir/json_builder.cpp.o: ../json.h
+CMakeFiles/transport_catalogue.dir/json_builder.cpp.o: ../json_builder.cpp
+CMakeFiles/transport_catalogue.dir/json_builder.cpp.o: ../json_builder.h
+
 CMakeFiles/transport_catalogue.dir/json_reader.cpp.o: ../domain.h
 CMakeFiles/transport_catalogue.dir/json_reader.cpp.o: ../geo.h
 CMakeFiles/transport_catalogue.dir/json_reader.cpp.o: ../json.h
+CMakeFiles/transport_catalogue.dir/json_reader.cpp.o: ../json_builder.h
 CMakeFiles/transport_catalogue.dir/json_reader.cpp.o: ../json_reader.cpp
 CMakeFiles/transport_catalogue.dir/json_reader.cpp.o: ../json_reader.h
 CMakeFiles/transport_catalogue.dir/json_reader.cpp.o: ../map_renderer.h
@@ -26,6 +31,7 @@ CMakeFiles/transport_catalogue.dir/json_reader.cpp.o: ../transport_catalogue.h
 CMakeFiles/transport_catalogue.dir/main.cpp.o: ../domain.h
 CMakeFiles/transport_catalogue.dir/main.cpp.o: ../geo.h
 CMakeFiles/transport_catalogue.dir/main.cpp.o: ../json.h
+CMakeFiles/transport_catalogue.dir/main.cpp.o: ../json_builder.h
 CMakeFiles/transport_catalogue.dir/main.cpp.o: ../json_reader.h
 CMakeFiles/transport_catalogue.dir/main.cpp.o: ../main.cpp
 CMakeFiles/transport_catalogue.dir/main.cpp.o: ../map_renderer.h

@@ -26,69 +26,75 @@ public:
     bool IsInt() const {
         return std::holds_alternative<int>(*this);
     }
-    bool IsDouble() const {
-        return std::holds_alternative<double>(*this) || IsInt();
-    }
-    bool IsPureDouble() const {
-        return std::holds_alternative<double>(*this);
-    }
-    bool IsBool() const {
-        return std::holds_alternative<bool>(*this);
-    }
-    bool IsString() const {
-        return std::holds_alternative<std::string>(*this);
-    }
-    bool IsNull() const {
-        return std::holds_alternative<std::nullptr_t>(*this);
-    }
-    bool IsArray() const {
-        return std::holds_alternative<Array>(*this);
-    }
-    bool IsMap() const {
-        return std::holds_alternative<Dict>(*this);
-    }
-
     int AsInt() const {
         using namespace std::literals;
         if (!IsInt()) {
-            throw std::logic_error("Is not a int");
+            throw std::logic_error("Not an int"s);
         }
         return std::get<int>(*this);
     }
-    bool AsBool() const {
-        using namespace std::literals;
-        if (!IsBool()) {
-            throw std::logic_error("Is not a bool");
-        }
-        return std::get<bool>(*this);
+
+    bool IsPureDouble() const {
+        return std::holds_alternative<double>(*this);
+    }
+    bool IsDouble() const {
+        return IsInt() || IsPureDouble();
     }
     double AsDouble() const {
         using namespace std::literals;
         if (!IsDouble()) {
-            throw std::logic_error("Is not a double");
+            throw std::logic_error("Not a double"s);
         }
         return IsPureDouble() ? std::get<double>(*this) : AsInt();
     }
-    const std::string& AsString() const {
+
+    bool IsBool() const {
+        return std::holds_alternative<bool>(*this);
+    }
+    bool AsBool() const {
         using namespace std::literals;
-        if (!IsString()) {
-            throw std::logic_error("Is not a string");
+        if (!IsBool()) {
+            throw std::logic_error("Not a bool"s);
         }
 
-        return std::get<std::string>(*this);
+        return std::get<bool>(*this);
+    }
+
+    bool IsNull() const {
+        return std::holds_alternative<std::nullptr_t>(*this);
+    }
+
+    bool IsArray() const {
+        return std::holds_alternative<Array>(*this);
     }
     const Array& AsArray() const {
         using namespace std::literals;
         if (!IsArray()) {
-            throw std::logic_error("Is not an array");
+            throw std::logic_error("Not an array"s);
         }
 
         return std::get<Array>(*this);
     }
-    const Dict& AsMap() const {
+
+    bool IsString() const {
+        return std::holds_alternative<std::string>(*this);
+    }
+    const std::string& AsString() const {
         using namespace std::literals;
-        if (!IsMap()) {
-            throw std::logic_error("Is not a map");
+        if (!IsString()) {
+            throw std::logic_error("Not a string"s);
+        }
+
+        return std::get<std::string>(*this);
+    }
+
+    bool IsDict() const {
+        return std::holds_alternative<Dict>(*this);
+    }
+    const Dict& AsDict() const {
+        using namespace std::literals;
+        if (!IsDict()) {
+            throw std::logic_error("Not a dict"s);
         }
 
         return std::get<Dict>(*this);
@@ -129,8 +135,8 @@ inline bool operator!=(const Document& lhs, const Document& rhs) {
     return !(lhs == rhs);
 }
 
-Document Load(std::istream& in);
+Document Load(std::istream& input);
 
-void Print(const Document& doc, std::ostream& out);
+void Print(const Document& doc, std::ostream& output);
 
 }  // namespace json

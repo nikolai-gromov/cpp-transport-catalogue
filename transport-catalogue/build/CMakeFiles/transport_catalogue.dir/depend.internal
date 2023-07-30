@@ -13,10 +13,15 @@ CMakeFiles/transport_catalogue.dir/input_reader.cpp.o
 CMakeFiles/transport_catalogue.dir/json.cpp.o
  /home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/json.cpp
  /home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/json.h
+CMakeFiles/transport_catalogue.dir/json_builder.cpp.o
+ /home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/json.h
+ /home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/json_builder.cpp
+ /home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/json_builder.h
 CMakeFiles/transport_catalogue.dir/json_reader.cpp.o
  /home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/domain.h
  /home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/geo.h
  /home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/json.h
+ /home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/json_builder.h
  /home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/json_reader.cpp
  /home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/json_reader.h
  /home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/map_renderer.h
@@ -27,6 +32,7 @@ CMakeFiles/transport_catalogue.dir/main.cpp.o
  /home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/domain.h
  /home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/geo.h
  /home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/json.h
+ /home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/json_builder.h
  /home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/json_reader.h
  /home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/main.cpp
  /home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/map_renderer.h

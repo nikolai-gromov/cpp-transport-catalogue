@@ -83,9 +83,22 @@ CMakeFiles/transport_catalogue.dir/input_reader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/transport_catalogue.dir/input_reader.cpp.s"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/input_reader.cpp -o CMakeFiles/transport_catalogue.dir/input_reader.cpp.s
 
+CMakeFiles/transport_catalogue.dir/json_builder.cpp.o: CMakeFiles/transport_catalogue.dir/flags.make
+CMakeFiles/transport_catalogue.dir/json_builder.cpp.o: ../json_builder.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/transport_catalogue.dir/json_builder.cpp.o"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/transport_catalogue.dir/json_builder.cpp.o -c /home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/json_builder.cpp
+
+CMakeFiles/transport_catalogue.dir/json_builder.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/transport_catalogue.dir/json_builder.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/json_builder.cpp > CMakeFiles/transport_catalogue.dir/json_builder.cpp.i
+
+CMakeFiles/transport_catalogue.dir/json_builder.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/transport_catalogue.dir/json_builder.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/json_builder.cpp -o CMakeFiles/transport_catalogue.dir/json_builder.cpp.s
+
 CMakeFiles/transport_catalogue.dir/json_reader.cpp.o: CMakeFiles/transport_catalogue.dir/flags.make
 CMakeFiles/transport_catalogue.dir/json_reader.cpp.o: ../json_reader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/transport_catalogue.dir/json_reader.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/transport_catalogue.dir/json_reader.cpp.o"
 	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/transport_catalogue.dir/json_reader.cpp.o -c /home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/json_reader.cpp
 
 CMakeFiles/transport_catalogue.dir/json_reader.cpp.i: cmake_force
@@ -98,7 +111,7 @@ CMakeFiles/transport_catalogue.dir/json_reader.cpp.s: cmake_force
 
 CMakeFiles/transport_catalogue.dir/json.cpp.o: CMakeFiles/transport_catalogue.dir/flags.make
 CMakeFiles/transport_catalogue.dir/json.cpp.o: ../json.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/transport_catalogue.dir/json.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/transport_catalogue.dir/json.cpp.o"
 	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/transport_catalogue.dir/json.cpp.o -c /home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/json.cpp
 
 CMakeFiles/transport_catalogue.dir/json.cpp.i: cmake_force
@@ -111,7 +124,7 @@ CMakeFiles/transport_catalogue.dir/json.cpp.s: cmake_force
 
 CMakeFiles/transport_catalogue.dir/main.cpp.o: CMakeFiles/transport_catalogue.dir/flags.make
 CMakeFiles/transport_catalogue.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/transport_catalogue.dir/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/transport_catalogue.dir/main.cpp.o"
 	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/transport_catalogue.dir/main.cpp.o -c /home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/main.cpp
 
 CMakeFiles/transport_catalogue.dir/main.cpp.i: cmake_force
@@ -124,7 +137,7 @@ CMakeFiles/transport_catalogue.dir/main.cpp.s: cmake_force
 
 CMakeFiles/transport_catalogue.dir/map_renderer.cpp.o: CMakeFiles/transport_catalogue.dir/flags.make
 CMakeFiles/transport_catalogue.dir/map_renderer.cpp.o: ../map_renderer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/transport_catalogue.dir/map_renderer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/transport_catalogue.dir/map_renderer.cpp.o"
 	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/transport_catalogue.dir/map_renderer.cpp.o -c /home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/map_renderer.cpp
 
 CMakeFiles/transport_catalogue.dir/map_renderer.cpp.i: cmake_force
@@ -137,7 +150,7 @@ CMakeFiles/transport_catalogue.dir/map_renderer.cpp.s: cmake_force
 
 CMakeFiles/transport_catalogue.dir/request_handler.cpp.o: CMakeFiles/transport_catalogue.dir/flags.make
 CMakeFiles/transport_catalogue.dir/request_handler.cpp.o: ../request_handler.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/transport_catalogue.dir/request_handler.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/transport_catalogue.dir/request_handler.cpp.o"
 	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/transport_catalogue.dir/request_handler.cpp.o -c /home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/request_handler.cpp
 
 CMakeFiles/transport_catalogue.dir/request_handler.cpp.i: cmake_force
@@ -150,7 +163,7 @@ CMakeFiles/transport_catalogue.dir/request_handler.cpp.s: cmake_force
 
 CMakeFiles/transport_catalogue.dir/stat_reader.cpp.o: CMakeFiles/transport_catalogue.dir/flags.make
 CMakeFiles/transport_catalogue.dir/stat_reader.cpp.o: ../stat_reader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/transport_catalogue.dir/stat_reader.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/transport_catalogue.dir/stat_reader.cpp.o"
 	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/transport_catalogue.dir/stat_reader.cpp.o -c /home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/stat_reader.cpp
 
 CMakeFiles/transport_catalogue.dir/stat_reader.cpp.i: cmake_force
@@ -163,7 +176,7 @@ CMakeFiles/transport_catalogue.dir/stat_reader.cpp.s: cmake_force
 
 CMakeFiles/transport_catalogue.dir/svg.cpp.o: CMakeFiles/transport_catalogue.dir/flags.make
 CMakeFiles/transport_catalogue.dir/svg.cpp.o: ../svg.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/transport_catalogue.dir/svg.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/transport_catalogue.dir/svg.cpp.o"
 	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/transport_catalogue.dir/svg.cpp.o -c /home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/svg.cpp
 
 CMakeFiles/transport_catalogue.dir/svg.cpp.i: cmake_force
@@ -176,7 +189,7 @@ CMakeFiles/transport_catalogue.dir/svg.cpp.s: cmake_force
 
 CMakeFiles/transport_catalogue.dir/transport_catalogue.cpp.o: CMakeFiles/transport_catalogue.dir/flags.make
 CMakeFiles/transport_catalogue.dir/transport_catalogue.cpp.o: ../transport_catalogue.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/transport_catalogue.dir/transport_catalogue.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/transport_catalogue.dir/transport_catalogue.cpp.o"
 	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/transport_catalogue.dir/transport_catalogue.cpp.o -c /home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/transport_catalogue.cpp
 
 CMakeFiles/transport_catalogue.dir/transport_catalogue.cpp.i: cmake_force
@@ -191,6 +204,7 @@ CMakeFiles/transport_catalogue.dir/transport_catalogue.cpp.s: cmake_force
 transport_catalogue_OBJECTS = \
 "CMakeFiles/transport_catalogue.dir/geo.cpp.o" \
 "CMakeFiles/transport_catalogue.dir/input_reader.cpp.o" \
+"CMakeFiles/transport_catalogue.dir/json_builder.cpp.o" \
 "CMakeFiles/transport_catalogue.dir/json_reader.cpp.o" \
 "CMakeFiles/transport_catalogue.dir/json.cpp.o" \
 "CMakeFiles/transport_catalogue.dir/main.cpp.o" \
@@ -205,6 +219,7 @@ transport_catalogue_EXTERNAL_OBJECTS =
 
 transport_catalogue: CMakeFiles/transport_catalogue.dir/geo.cpp.o
 transport_catalogue: CMakeFiles/transport_catalogue.dir/input_reader.cpp.o
+transport_catalogue: CMakeFiles/transport_catalogue.dir/json_builder.cpp.o
 transport_catalogue: CMakeFiles/transport_catalogue.dir/json_reader.cpp.o
 transport_catalogue: CMakeFiles/transport_catalogue.dir/json.cpp.o
 transport_catalogue: CMakeFiles/transport_catalogue.dir/main.cpp.o
@@ -215,7 +230,7 @@ transport_catalogue: CMakeFiles/transport_catalogue.dir/svg.cpp.o
 transport_catalogue: CMakeFiles/transport_catalogue.dir/transport_catalogue.cpp.o
 transport_catalogue: CMakeFiles/transport_catalogue.dir/build.make
 transport_catalogue: CMakeFiles/transport_catalogue.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable transport_catalogue"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable transport_catalogue"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/transport_catalogue.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

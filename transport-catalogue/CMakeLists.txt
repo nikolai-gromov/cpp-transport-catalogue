@@ -16,6 +16,8 @@ add_executable(transport_catalogue
         geo.h
         input_reader.cpp
         input_reader.h
+        json_builder.cpp
+        json_builder.h
         json_reader.cpp
         json_reader.h
         json.cpp

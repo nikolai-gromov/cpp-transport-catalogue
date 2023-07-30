@@ -1,5 +1,6 @@
 #pragma once
 #include "json.h"
+#include "json_builder.h"
 #include "domain.h"
 #include "transport_catalogue.h"
 #include "map_renderer.h"
@@ -16,23 +17,29 @@ struct Requests {
     std::vector<json::Node> stops;
 };
 
-json::Dict GetBusStatDict(const json::Dict& request, request_handler::RequestHandler& request_handler);
+void GetBusStatDict(const json::Dict& request,
+                    json::Builder& builder,
+                    request_handler::RequestHandler& request_handler);
 
-json::Dict GetBusesByStop(const std::string& stop_name, request_handler::RequestHandler& request_handler);
+void GetBusesByStopDict(const json::Dict& request,
+                        json::Builder& builder,
+                        request_handler::RequestHandler& request_handler,
+                        TransportCatalogue& catalogue);
 
-json::Dict GetBusesByStopDict(const json::Dict& request, request_handler::RequestHandler& request_handler, TransportCatalogue& catalogue);
+void GetRenderMapDict(const json::Dict& request,
+                        json::Builder& builder,
+                        request_handler::RequestHandler& request_handler);
 
-json::Dict GetRenderMap(request_handler::RequestHandler& request_handler);
-
-json::Dict GetRenderMapDict(const json::Dict& request, request_handler::RequestHandler& request_handler);
-
-void ParsingStatRequest(std::ostream& out, const json::Node& request_body, request_handler::RequestHandler& request_handler, TransportCatalogue& catalogue);
+void ParsingStatRequest(std::ostream& out,
+                        const json::Node& request_body,
+                        request_handler::RequestHandler& request_handler,
+                        TransportCatalogue& catalogue);
 
 std::vector<std::string_view> GetStops(const json::Dict& bus_dict);
 
 domain::Bus FillBus(const json::Dict& bus_dict, TransportCatalogue& catalogue);
 
-void GetDistance(TransportCatalogue& catalogue, const json::Dict& stop_dict);
+void GetDistance(const json::Dict& stop_dict, TransportCatalogue& catalogue);
 
 domain::Stop FillStop(const json::Dict& stop_dict);
 

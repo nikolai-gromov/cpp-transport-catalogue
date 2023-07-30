@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/transport_catalogue.dir/geo.cpp.o"
   "CMakeFiles/transport_catalogue.dir/input_reader.cpp.o"
   "CMakeFiles/transport_catalogue.dir/json.cpp.o"
+  "CMakeFiles/transport_catalogue.dir/json_builder.cpp.o"
   "CMakeFiles/transport_catalogue.dir/json_reader.cpp.o"
   "CMakeFiles/transport_catalogue.dir/main.cpp.o"
   "CMakeFiles/transport_catalogue.dir/map_renderer.cpp.o"

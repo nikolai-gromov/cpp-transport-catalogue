@@ -4,7 +4,7 @@
 
 namespace transport_catalogue {
 
-void TransportCatalogue::AddStop(domain::Stop stop) {
+void TransportCatalogue::AddStop(const domain::Stop& stop) {
     stops_.push_back(stop);
     stopname_to_stop_[stops_.back().name] = &stops_.back();
 }
@@ -16,7 +16,7 @@ StopPtr TransportCatalogue::FindStop(std::string_view name) const {
     return nullptr;
 }
 
-void TransportCatalogue::AddBus(domain::Bus bus) {
+void TransportCatalogue::AddBus(const domain::Bus& bus) {
     buses_.push_back(bus);
     busname_to_bus_[buses_.back().name] = &buses_.back();
 }
@@ -63,19 +63,19 @@ double TransportCatalogue::GetDistanceBetweenStops(StopPtr stop_first_ptr, StopP
 }
 
 BusStat TransportCatalogue::GetBusStat(BusPtr bus) const {
-    domain::BusStat data;
-    data.stops_on_route = bus->stops.size();
+    domain::BusStat stat;
+    stat.stops_on_route = bus->stops.size();
     auto tmp = bus->stops;
     std::sort(tmp.begin(), tmp.end());
     auto it = std::unique(tmp.begin(), tmp.end());
     tmp.resize(std::distance(tmp.begin(), it));
-    data.unique_stops = tmp.size();
+    stat.unique_stops = tmp.size();
     for (int i = 0; i < (static_cast<int>(bus->stops.size()) - 1); ++i) {
-        data.distance_coordinates += ComputeDistance(bus->stops[i]->coordinates, bus->stops[i + 1]->coordinates);
-        data.distance += GetDistanceBetweenStops(bus->stops[i], bus->stops[i + 1]);
+        stat.distance_coordinates += ComputeDistance(bus->stops[i]->coordinates, bus->stops[i + 1]->coordinates);
+        stat.distance += GetDistanceBetweenStops(bus->stops[i], bus->stops[i + 1]);
     }
-    data.curvature = data.distance / data.distance_coordinates;
-    return data;
+    stat.curvature = stat.distance / stat.distance_coordinates;
+    return stat;
 }
 
 } // namespace transport_catalogue

@@ -33,11 +33,11 @@ using BusStat = const domain::BusStat;
 
 class TransportCatalogue {
 public:
-    void AddStop(domain::Stop stop);
+    void AddStop(const domain::Stop& stop);
 
     StopPtr FindStop(std::string_view name) const;
 
-    void AddBus(domain::Bus bus);
+    void AddBus(const domain::Bus& bus);
 
     BusPtr FindBus(std::string_view name) const;
 
