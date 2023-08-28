@@ -34,5 +34,5 @@ std::string_view GetQueryType(std::string_view query);
 
 void Load(std::istream& in, TransportCatalogue& catalog);
 
-} // namespace input_reader
-} // namespace transport_catalogue
+}  // namespace input_reader
+}  // namespace transport_catalogue

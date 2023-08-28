@@ -15,6 +15,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/stat_reader.cpp" "/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/build/CMakeFiles/transport_catalogue.dir/stat_reader.cpp.o"
   "/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/svg.cpp" "/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/build/CMakeFiles/transport_catalogue.dir/svg.cpp.o"
   "/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/transport_catalogue.cpp" "/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/build/CMakeFiles/transport_catalogue.dir/transport_catalogue.cpp.o"
+  "/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/transport_router.cpp" "/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/build/CMakeFiles/transport_catalogue.dir/transport_router.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

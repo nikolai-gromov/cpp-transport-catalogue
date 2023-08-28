@@ -14,6 +14,7 @@ add_executable(transport_catalogue
         domain.h
         geo.cpp
         geo.h
+        graph.h
         input_reader.cpp
         input_reader.h
         json_builder.cpp
@@ -25,11 +26,15 @@ add_executable(transport_catalogue
         main.cpp
         map_renderer.cpp
         map_renderer.h
+        ranges.h
         request_handler.cpp
         request_handler.h
+        router.h
         stat_reader.cpp
         stat_reader.h
         svg.cpp
         svg.h
         transport_catalogue.cpp
-        transport_catalogue.h)
+        transport_catalogue.h
+        transport_router.cpp
+        transport_router.h)

@@ -53,5 +53,10 @@
   "directory": "/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/build",
   "command": "/usr/bin/g++   -I/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/.  -O3 -DNDEBUG   -std=gnu++17 -o CMakeFiles/transport_catalogue.dir/transport_catalogue.cpp.o -c /home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/transport_catalogue.cpp",
   "file": "/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/transport_catalogue.cpp"
+},
+{
+  "directory": "/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/build",
+  "command": "/usr/bin/g++   -I/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/.  -O3 -DNDEBUG   -std=gnu++17 -o CMakeFiles/transport_catalogue.dir/transport_router.cpp.o -c /home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/transport_router.cpp",
+  "file": "/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/transport_router.cpp"
 }
 ]

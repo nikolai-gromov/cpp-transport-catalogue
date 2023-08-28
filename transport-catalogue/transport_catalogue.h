@@ -34,22 +34,24 @@ using BusStat = const domain::BusStat;
 class TransportCatalogue {
 public:
     void AddStop(const domain::Stop& stop);
-
-    StopPtr FindStop(std::string_view name) const;
-
     void AddBus(const domain::Bus& bus);
 
+    StopPtr FindStop(std::string_view name) const;
     BusPtr FindBus(std::string_view name) const;
 
-    const std::unordered_map<std::string_view, BusPtr>& GetBuses() const;
-
-    const std::set<std::string_view> GetBusesByStop(std::string_view name) const;
-
-    void SetDistanceBetweenStops(std::string_view name_first, const double distance, std::string_view name_second);
+    void SetDistanceBetweenStops(std::string_view stop_first, std::string_view stop_second, const double distance);
 
     double GetDistanceBetweenStops(StopPtr stop_first_ptr, StopPtr stop_second_ptr) const;
 
     BusStat GetBusStat(BusPtr bus) const;
+
+    const std::set<std::string_view> GetBusesByStop(std::string_view name) const;
+
+    size_t GetStopsCount() const;
+
+    const std::unordered_map<std::string_view, StopPtr>& GetStopNameToStop() const;
+    const std::unordered_map<std::string_view, BusPtr>& GetBusNameToBus() const;
+
 
 private:
     std::deque<domain::Stop> stops_;
@@ -59,4 +61,4 @@ private:
     std::unordered_map<std::pair<StopPtr, StopPtr>, double, detail::HasherPair<domain::Stop>> distance_between_stops_;
 };
 
-} // namespace transport_catalogue
+}  // namespace transport_catalogue

@@ -8,6 +8,10 @@ void TransportCatalogue::AddStop(const domain::Stop& stop) {
     stops_.push_back(stop);
     stopname_to_stop_[stops_.back().name] = &stops_.back();
 }
+void TransportCatalogue::AddBus(const domain::Bus& bus) {
+    buses_.push_back(bus);
+    busname_to_bus_[buses_.back().name] = &buses_.back();
+}
 
 StopPtr TransportCatalogue::FindStop(std::string_view name) const {
     if (auto is_stop = stopname_to_stop_.find(name); is_stop != stopname_to_stop_.end()) {
@@ -15,12 +19,6 @@ StopPtr TransportCatalogue::FindStop(std::string_view name) const {
     }
     return nullptr;
 }
-
-void TransportCatalogue::AddBus(const domain::Bus& bus) {
-    buses_.push_back(bus);
-    busname_to_bus_[buses_.back().name] = &buses_.back();
-}
-
 BusPtr TransportCatalogue::FindBus(std::string_view name) const {
     if (auto is_bus = busname_to_bus_.find(name); is_bus != busname_to_bus_.end()) {
         return busname_to_bus_.at(name);
@@ -28,30 +26,9 @@ BusPtr TransportCatalogue::FindBus(std::string_view name) const {
     return nullptr;
 }
 
-const std::unordered_map<std::string_view, BusPtr>& TransportCatalogue::GetBuses() const {
-    return  busname_to_bus_;
-}
-
-const std::set<std::string_view> TransportCatalogue::GetBusesByStop(std::string_view name) const {
-    std::set<std::string_view> result;
-    if (nullptr != FindStop(name)) {
-        std::for_each(
-                    busname_to_bus_.begin(), busname_to_bus_.end(),
-                    [&](const auto buses) {
-                        for (const auto stop : buses.second->stops) {
-                            if (name == stop->name) {
-                                result.insert(buses.second->name);
-                                break;
-                            }
-                        }
-                    });
-    }
-    return result;
-}
-
-void TransportCatalogue::SetDistanceBetweenStops(std::string_view name_first, double distance, std::string_view name_second) {
-    auto stop_first_ptr = FindStop(name_first);
-    auto stop_second_ptr = FindStop(name_second);
+void TransportCatalogue::SetDistanceBetweenStops(std::string_view stop_first, std::string_view stop_second, const double distance) {
+    auto stop_first_ptr = FindStop(stop_first);
+    auto stop_second_ptr = FindStop(stop_second);
     if (stop_first_ptr != nullptr && stop_second_ptr != nullptr) {
         distance_between_stops_[{ stop_first_ptr, stop_second_ptr }] = distance;
         distance_between_stops_.try_emplace({ stop_second_ptr, stop_first_ptr }, distance);
@@ -78,4 +55,32 @@ BusStat TransportCatalogue::GetBusStat(BusPtr bus) const {
     return stat;
 }
 
-} // namespace transport_catalogue
+const std::set<std::string_view> TransportCatalogue::GetBusesByStop(std::string_view name) const {
+    std::set<std::string_view> result;
+    if (nullptr != FindStop(name)) {
+        std::for_each(
+                    busname_to_bus_.begin(), busname_to_bus_.end(),
+                    [&](const auto buses) {
+                        for (const auto stop : buses.second->stops) {
+                            if (name == stop->name) {
+                                result.insert(buses.second->name);
+                                break;
+                            }
+                        }
+                    });
+    }
+    return result;
+}
+
+size_t TransportCatalogue::GetStopsCount() const {
+    return stops_.size();
+}
+
+const std::unordered_map<std::string_view, StopPtr>& TransportCatalogue::GetStopNameToStop() const {
+    return  stopname_to_stop_;
+}
+const std::unordered_map<std::string_view, BusPtr>& TransportCatalogue::GetBusNameToBus() const {
+    return  busname_to_bus_;
+}
+
+}  // namespace transport_catalogue

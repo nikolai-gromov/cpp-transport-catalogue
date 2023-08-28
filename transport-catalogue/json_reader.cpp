@@ -14,7 +14,7 @@ using namespace std::literals;
 
 void GetBusStatDict(const json::Dict& request,
                     json::Builder& builder,
-                    request_handler::RequestHandler& request_handler) {
+                    const request_handler::RequestHandler& request_handler) {
     if (const auto stat = request_handler.GetBusStat(request.at("name"s).AsString()); stat) {
         builder.StartDict()
             .Key("curvature"s).Value((*stat).curvature)
@@ -33,9 +33,9 @@ void GetBusStatDict(const json::Dict& request,
 
 void GetBusesByStopDict(const json::Dict& request,
                         json::Builder& builder,
-                        request_handler::RequestHandler& request_handler,
-                        TransportCatalogue& catalogue) {
-    const std::string stop_name = request.at("name").AsString();
+                        const TransportCatalogue& catalogue,
+                        const request_handler::RequestHandler& request_handler) {
+    const std::string stop_name = request.at("name"s).AsString();
     if (nullptr != catalogue.FindStop(stop_name)) {
         builder.StartDict()
             .Key("buses"s).StartArray();
@@ -44,19 +44,19 @@ void GetBusesByStopDict(const json::Dict& request,
                     builder.Value(std::string(*it));
                 }
             builder.EndArray()
-            .Key("request_id"s).Value(request.at("id").AsInt())
+            .Key("request_id"s).Value(request.at("id"s).AsInt())
         .EndDict();
     } else {
         builder.StartDict()
             .Key("error_message"s).Value("not found"s)
-            .Key("request_id"s).Value(request.at("id").AsInt())
+            .Key("request_id"s).Value(request.at("id"s).AsInt())
         .EndDict();
     }
 }
 
 void GetRenderMapDict(const json::Dict& request,
                         json::Builder& builder,
-                        request_handler::RequestHandler& request_handler) {
+                        const request_handler::RequestHandler& request_handler) {
     std::ostringstream output;
     request_handler.RenderMap().Render(output);
     builder.StartDict()
@@ -65,21 +65,59 @@ void GetRenderMapDict(const json::Dict& request,
     .EndDict();
 }
 
+void GetRouteItemDict(json::Builder& builder, const router::Item& item) {
+    if (item.type == router::ItemType::WAIT) {
+        builder.StartDict()
+            .Key("type").Value("Wait"s)
+            .Key("stop_name"s).Value(std::string(item.name))
+            .Key("time"s).Value(item.time)
+        .EndDict();
+    } else if (item.type == router::ItemType::BUS) {
+        builder.StartDict()
+            .Key("type"s).Value("Bus"s)
+            .Key("bus"s).Value(std::string(item.name))
+            .Key("span_count"s).Value(item.span_count)
+            .Key("time"s).Value(item.time)
+        .EndDict();
+    }
+}
+
+void GetRouteItemsDict(json::Builder& builder, const std::optional<router::RouteItems>& items, int request_id) {
+    if (items) {
+        builder.StartDict()
+            .Key("request_id").Value(request_id)
+            .Key("total_time").Value(items.value().total_time)
+            .Key("items").StartArray();
+                for (const auto& item : items.value().items) {
+                    GetRouteItemDict(builder, item);
+                }
+            builder.EndArray();
+        builder.EndDict();
+    } else {
+        builder.StartDict()
+            .Key("request_id"s).Value(request_id)
+            .Key("error_message"s).Value("not found"s)
+        .EndDict();
+    }
+}
+
 void ParsingStatRequest(std::ostream& out,
                         const json::Node& request_body,
-                        request_handler::RequestHandler& request_handler,
-                        TransportCatalogue& catalogue) {
+                        const TransportCatalogue& catalogue,
+                        const request_handler::RequestHandler& handler) {
     json::Builder builder;
     builder.StartArray();
     const int size = static_cast<int>(request_body.AsArray().size());
     for (int i = 0; i < size; ++i) {
         json::Dict request = request_body.AsArray().at(i).AsDict();
         if (request.at("type"s).AsString() == "Bus"s) {
-            GetBusStatDict(request, builder, request_handler);
+            GetBusStatDict(request, builder, handler);
         } else if (request.at("type"s).AsString() == "Stop"s) {
-            GetBusesByStopDict(request, builder, request_handler, catalogue);
+            GetBusesByStopDict(request, builder, catalogue, handler);
         } else if (request.at("type"s).AsString() == "Map"s) {
-            GetRenderMapDict(request, builder, request_handler);
+            GetRenderMapDict(request, builder, handler);
+        } else if (request.at("type"s).AsString() == "Route"s) {
+            GetRouteItemsDict(builder, handler.GetRouteByStops(request["from"s].AsString(), request["to"s].AsString()), request["id"s].AsInt());
         }
     }
     builder.EndArray();
@@ -99,7 +137,7 @@ std::vector<std::string_view> GetStops(const json::Dict& bus_dict) {
     return result;
 }
 
-domain::Bus FillBus(const json::Dict& bus_dict, TransportCatalogue& catalogue) {
+domain::Bus FillBus(const json::Dict& bus_dict, const TransportCatalogue& catalogue) {
     domain::Bus bus;
     bus.name = bus_dict.at("name"s).AsString();
     bus.is_roundtrip = bus_dict.at("is_roundtrip"s).AsBool();
@@ -113,7 +151,7 @@ void GetDistance(const json::Dict& stop_dict, TransportCatalogue& catalogue) {
     if (5u == stop_dict.size()) {
         std::string stop_name = stop_dict.at("name"s).AsString();
         for (const auto& [stop, distance] : stop_dict.at("road_distances"s).AsDict()) {
-            catalogue.SetDistanceBetweenStops(stop_name, distance.AsDouble(), stop);
+            catalogue.SetDistanceBetweenStops(stop_name, stop, distance.AsDouble());
         }
     }
 }
@@ -189,21 +227,30 @@ void ParsingRenderSettings(const json::Node& request_body, renderer::MapRenderer
     renderer.AddSettings(render_settings);
 }
 
+void ParsingRoutingSettings(const json::Node& request_body, router::TransportRouter& router) {
+    json::Dict setting_dict = request_body.AsDict();
+    router.SetRoutingSettings({ setting_dict.at("bus_wait_time").AsDouble(), setting_dict.at("bus_velocity").AsDouble() });
+}
+
 void RequestLoad(std::istream& in, std::ostream& out,
-                    request_handler::RequestHandler& request_handler,
+                    TransportCatalogue& catalogue,
                     renderer::MapRenderer& renderer,
-                    TransportCatalogue& catalogue) {
+                    router::TransportRouter& router,
+                    request_handler::RequestHandler& handler) {
     json::Document requests = json::Load(in);
     for (const auto& [request_type, request_body] : requests.GetRoot().AsDict()) {
         if (request_type == "base_requests"s) {
             ParsingBaseRequests(request_body, catalogue);
         } else if (request_type == "stat_requests"s) {
-            ParsingStatRequest(out, request_body, request_handler, catalogue);
+            router.BuildRoutes();
+            ParsingStatRequest(out, request_body, catalogue, handler);
         } else if (request_type == "render_settings"s){
             ParsingRenderSettings(request_body, renderer);
+        } else if (request_type == "routing_settings"s){
+            ParsingRoutingSettings(request_body, router);
         }
     }
 }
 
-} // namespace json_reader
-} // namespace transport_catalogue
+}  // namespace json_reader
+}  // namespace transport_catalogue

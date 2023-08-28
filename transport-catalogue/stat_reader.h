@@ -14,5 +14,5 @@ void PrintBusStat(std::ostream& out, std::string_view name, const TransportCatal
 
 void ParsingCatalogRequests(std::istream& input, const TransportCatalogue& catalog);
 
-} // namespace stat_reader
-} // namespace transport_catalogue
+}  // namespace stat_reader
+}  // namespace transport_catalogue

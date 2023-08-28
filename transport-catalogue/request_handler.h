@@ -2,6 +2,7 @@
 #include "domain.h"
 #include "transport_catalogue.h"
 #include "map_renderer.h"
+#include "transport_router.h"
 
 #include <optional>
 #include <set>
@@ -12,11 +13,7 @@ namespace request_handler {
 
 class RequestHandler {
 public:
-    using StopPtr = const domain::Stop*;
-    using BusPtr = const domain::Bus*;
-    using BusStat = const domain::BusStat;
-
-    RequestHandler(const TransportCatalogue& db, const renderer::MapRenderer& renderer);
+    RequestHandler(const TransportCatalogue& db, const renderer::MapRenderer& renderer, const router::TransportRouter& router);
 
     std::optional<BusStat> GetBusStat(const std::string_view& bus_name) const;
 
@@ -24,10 +21,13 @@ public:
 
     svg::Document RenderMap() const;
 
+    std::optional<router::RouteItems> GetRouteByStops(const std::string_view& start_stop, const std::string_view& finish_stop) const;
+
 private:
     const TransportCatalogue& db_;
     const renderer::MapRenderer& renderer_;
+    const router::TransportRouter& router_;
 };
 
-} // namespace request_handler
-} // namespace transport_catalogue
+}  // namespace request_handler
+}  // namespace transport_catalogue

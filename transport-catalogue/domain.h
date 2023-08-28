@@ -25,4 +25,4 @@ struct BusStat {
     double curvature = 0.;
 };
 
-} // namespace domain
+}  // namespace domain

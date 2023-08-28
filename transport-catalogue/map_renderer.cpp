@@ -140,5 +140,5 @@ svg::Text MapRenderer::RenderStopName(StopPtr stop_ptr, svg::Point position) con
     return stop_name;
 }
 
-} // namespace renderer
-} // namespace transport_catalogue
+}  // namespace renderer
+}  // namespace transport_catalogue

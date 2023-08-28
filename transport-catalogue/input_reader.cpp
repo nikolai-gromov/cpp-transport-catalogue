@@ -34,7 +34,7 @@ void GetDistance(std::string_view stopname, std::vector<std::string_view> stop_d
         distance = stop_data[i].substr(0, pos_m);
         auto pos_t = stop_data[i].find('t');
         stop = stop_data[i].substr((pos_t + 3), ((stop_data[i].size()) - (pos_t + 3)));
-        catalog.SetDistanceBetweenStops(stopname, std::stod(std::string(distance)), stop);
+        catalog.SetDistanceBetweenStops(stopname, stop, std::stod(std::string(distance)));
     }
     stop_data.clear();
 }
@@ -140,5 +140,5 @@ void Load(std::istream& in, TransportCatalogue& catalog) {
     queries.bus.clear();
 }
 
-} // namespace input_reader
-} // namespace transport_catalogue
+}  // namespace input_reader
+}  // namespace transport_catalogue

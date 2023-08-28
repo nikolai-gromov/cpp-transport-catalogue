@@ -8,9 +8,10 @@ using StopPtr = const domain::Stop*;
 using BusPtr = const domain::Bus*;
 using BusStat = const domain::BusStat;
 
-RequestHandler::RequestHandler(const TransportCatalogue& db, const renderer::MapRenderer& renderer)
+RequestHandler::RequestHandler(const TransportCatalogue& db, const renderer::MapRenderer& renderer, const router::TransportRouter& router)
     : db_(db)
     , renderer_(renderer)
+    , router_(router)
     {
     }
 
@@ -27,8 +28,12 @@ const std::set<std::string_view> RequestHandler::GetBusesByStop(const std::strin
 }
 
 svg::Document RequestHandler::RenderMap() const {
-    return renderer_.RenderMap(db_.GetBuses());
+    return renderer_.RenderMap(db_.GetBusNameToBus());
 }
 
-} // namespace request_handler
-} // namespace transport_catalogue
+std::optional<router::RouteItems> RequestHandler::GetRouteByStops(const std::string_view& start_stop, const std::string_view& finish_stop) const {
+    return router_.GetRouteByStops(db_.FindStop(start_stop), db_.FindStop(finish_stop));
+}
+
+}  // namespace request_handler
+}  // namespace transport_catalogue

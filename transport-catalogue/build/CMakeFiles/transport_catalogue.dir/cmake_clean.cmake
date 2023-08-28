@@ -10,6 +10,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/transport_catalogue.dir/stat_reader.cpp.o"
   "CMakeFiles/transport_catalogue.dir/svg.cpp.o"
   "CMakeFiles/transport_catalogue.dir/transport_catalogue.cpp.o"
+  "CMakeFiles/transport_catalogue.dir/transport_router.cpp.o"
   "transport_catalogue"
   "transport_catalogue.pdb"
 )

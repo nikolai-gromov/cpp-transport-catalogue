@@ -71,5 +71,5 @@ void ParsingCatalogRequests(std::istream& in, const TransportCatalogue& catalog)
     }
 }
 
-} // namespace stat_reader
-} // namespace transport_catalogue
+}  // namespace stat_reader
+}  // namespace transport_catalogue
