@@ -224,12 +224,17 @@ void ParsingRenderSettings(const json::Node& request_body, renderer::MapRenderer
         setting_dict.at("underlayer_width"s).AsDouble(),
         color_palette
     };
-    renderer.AddSettings(render_settings);
+    renderer.SetRenderSettings(render_settings);
 }
 
 void ParsingRoutingSettings(const json::Node& request_body, router::TransportRouter& router) {
     json::Dict setting_dict = request_body.AsDict();
     router.SetRoutingSettings({ setting_dict.at("bus_wait_time").AsDouble(), setting_dict.at("bus_velocity").AsDouble() });
+}
+
+void ParsingSerializationSettings(const json::Node& request_body, serialization::Serializer& serializer) {
+    json::Dict setting_dict = request_body.AsDict();
+    serializer.SetFileName(setting_dict.at("file").AsString());
 }
 
 void RequestLoad(std::istream& in, std::ostream& out,
@@ -248,6 +253,43 @@ void RequestLoad(std::istream& in, std::ostream& out,
             ParsingRenderSettings(request_body, renderer);
         } else if (request_type == "routing_settings"s){
             ParsingRoutingSettings(request_body, router);
+        }
+    }
+}
+
+void MakeBaseLoad(std::istream& in,
+                    TransportCatalogue& catalogue,
+                    renderer::MapRenderer& renderer,
+                    router::TransportRouter& router,
+                    serialization::Serializer& serializer) {
+    json::Document requests = json::Load(in);
+    for (const auto& [request_type, request_body] : requests.GetRoot().AsDict()) {
+        if (request_type == "base_requests"s) {
+            ParsingBaseRequests(request_body, catalogue);
+        } else if (request_type == "render_settings"s){
+            ParsingRenderSettings(request_body, renderer);
+        } else if (request_type == "routing_settings"s){
+            ParsingRoutingSettings(request_body, router);
+        } else if (request_type == "serialization_settings"s) {
+            ParsingSerializationSettings(request_body, serializer);
+        }
+    }
+    serializer.SerializeDataBase();
+}
+
+void ProcessRequestsLoad(std::istream& in, std::ostream& out,
+                            TransportCatalogue& catalogue,
+                            router::TransportRouter& router,
+                            request_handler::RequestHandler& handler,
+                            serialization::Serializer& serializer) {
+    json::Document requests = json::Load(in);
+    for (const auto& [request_type, request_body] : requests.GetRoot().AsDict()) {
+        if (request_type == "stat_requests"s) {
+            serializer.DeserializeDataBase();
+            router.BuildRoutes();
+            ParsingStatRequest(out, request_body, catalogue, handler);
+        } else if (request_type == "serialization_settings"s) {
+            ParsingSerializationSettings(request_body, serializer);
         }
     }
 }

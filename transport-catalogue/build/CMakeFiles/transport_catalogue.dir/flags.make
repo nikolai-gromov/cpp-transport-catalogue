@@ -6,5 +6,5 @@ CXX_FLAGS = -O3 -DNDEBUG   -std=gnu++17
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/. 
+CXX_INCLUDES = -I/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/. -I/home/nikolai/protobuf-3.21.12/build-release/Protobuf/include -I/home/nikolai/practicum/cpp-transport-catalogue/transport-catalogue/build 
 

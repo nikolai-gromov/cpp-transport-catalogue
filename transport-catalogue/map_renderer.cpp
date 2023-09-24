@@ -12,8 +12,12 @@ bool IsZero(double value) {
     return std::abs(value) < EPSILON;
 }
 
-void MapRenderer::AddSettings(const RenderSettings& render_settings) {
+void MapRenderer::SetRenderSettings(const RenderSettings& render_settings) {
     render_settings_ = render_settings;
+}
+
+const RenderSettings& MapRenderer::GetRenderSettings() {
+    return render_settings_;
 }
 
 svg::Document MapRenderer::RenderMap(const std::unordered_map<std::string_view, BusPtr>& buses_dict) const {

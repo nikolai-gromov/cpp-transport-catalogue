@@ -39,9 +39,11 @@ public:
 
     void SetRoutingSettings(const RouterSettings& settings);
 
+    const RouterSettings& GetRoutingSettings();
+
     void BuildRoutes();
 
-    std::optional<RouteItems> GetRouteByStops(StopPtr start_stop, StopPtr finish_stop) const;
+    std::optional<RouteItems> GetRouteByStops(StopPtr start_stop_ptr, StopPtr finish_stop_ptr) const;
 
 private:
     const TransportCatalogue& catalogue_;
@@ -59,7 +61,7 @@ private:
 
     void AddEdgeToItem(graph::VertexId start_vertex, graph::VertexId stop_vertex, Item item);
 
-    void AddBusEdge(StopPtr start_stop, StopPtr finish_stop, const std::string_view& bus_name, int span, double distance);
+    void AddBusEdge(StopPtr start_stop_ptr, StopPtr finish_stop_ptr, const std::string_view& bus_name, int span, double distance);
 
     void AddRouteToGraph(const std::string_view& bus_name, BusPtr bus_ptr);
 };

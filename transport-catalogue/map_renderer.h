@@ -95,7 +95,9 @@ class MapRenderer {
 public:
     MapRenderer() = default;
 
-    void AddSettings(const RenderSettings& render_settings);
+    void SetRenderSettings(const RenderSettings& render_settings);
+
+    const RenderSettings& GetRenderSettings();
 
     svg::Document RenderMap(const std::unordered_map<std::string_view, BusPtr>& buses_dict) const;
 

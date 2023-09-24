@@ -6,6 +6,7 @@
 #include "map_renderer.h"
 #include "transport_router.h"
 #include "request_handler.h"
+#include "serialization.h"
 
 #include <iostream>
 
@@ -61,6 +62,18 @@ void RequestLoad(std::istream& in, std::ostream& out,
                     renderer::MapRenderer& renderer,
                     router::TransportRouter& router,
                     request_handler::RequestHandler& handler);
+
+void MakeBaseLoad(std::istream& in,
+                    TransportCatalogue& catalogue,
+                    renderer::MapRenderer& renderer,
+                    router::TransportRouter& router,
+                    serialization::Serializer& serializer);
+
+void ProcessRequestsLoad(std::istream& in, std::ostream& out,
+                            TransportCatalogue& catalogue,
+                            router::TransportRouter& router,
+                            request_handler::RequestHandler& handler,
+                            serialization::Serializer& serializer);
 
 }  // namespace json_reader
 }  // namespace transport_catalogue

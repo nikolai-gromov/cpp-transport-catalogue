@@ -8,11 +8,18 @@
                 "-fdiagnostics-color=always",
                 "-g",
                 "${workspaceFolder}/*.cpp",
+                "transport_catalogue.pb.cc",
+                "map_renderer.pb.cc",
+                "transport_router.pb.cc",
+                "svg.pb.cc",
                 "-Wall",
                 "-Werror",
                 "-std=c++17",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
+                "${fileDirname}/${fileBasenameNoExtension}",
+                "-I.",
+                "-L.",
+                "-lprotobuf"
             ],
             "options": {
                 "cwd": "${fileDirname}"

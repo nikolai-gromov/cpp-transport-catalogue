@@ -34,24 +34,28 @@ using BusStat = const domain::BusStat;
 class TransportCatalogue {
 public:
     void AddStop(const domain::Stop& stop);
+
     void AddBus(const domain::Bus& bus);
 
     StopPtr FindStop(std::string_view name) const;
+
     BusPtr FindBus(std::string_view name) const;
 
-    void SetDistanceBetweenStops(std::string_view stop_first, std::string_view stop_second, const double distance);
+    void SetDistanceBetweenStops(std::string_view stop_first, std::string_view stop_second, double distance);
 
     double GetDistanceBetweenStops(StopPtr stop_first_ptr, StopPtr stop_second_ptr) const;
 
-    BusStat GetBusStat(BusPtr bus) const;
+    BusStat GetBusStat(BusPtr bus_ptr) const;
 
     const std::set<std::string_view> GetBusesByStop(std::string_view name) const;
 
     size_t GetStopsCount() const;
 
     const std::unordered_map<std::string_view, StopPtr>& GetStopNameToStop() const;
+
     const std::unordered_map<std::string_view, BusPtr>& GetBusNameToBus() const;
 
+    const std::unordered_map<std::pair<StopPtr, StopPtr>, double, detail::HasherPair<domain::Stop>>& GetDistancesBetweenStops() const;
 
 private:
     std::deque<domain::Stop> stops_;

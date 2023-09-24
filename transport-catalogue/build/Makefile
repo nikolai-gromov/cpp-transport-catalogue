@@ -172,33 +172,6 @@ geo.cpp.s:
 	$(MAKE) -f CMakeFiles/transport_catalogue.dir/build.make CMakeFiles/transport_catalogue.dir/geo.cpp.s
 .PHONY : geo.cpp.s
 
-input_reader.o: input_reader.cpp.o
-
-.PHONY : input_reader.o
-
-# target to build an object file
-input_reader.cpp.o:
-	$(MAKE) -f CMakeFiles/transport_catalogue.dir/build.make CMakeFiles/transport_catalogue.dir/input_reader.cpp.o
-.PHONY : input_reader.cpp.o
-
-input_reader.i: input_reader.cpp.i
-
-.PHONY : input_reader.i
-
-# target to preprocess a source file
-input_reader.cpp.i:
-	$(MAKE) -f CMakeFiles/transport_catalogue.dir/build.make CMakeFiles/transport_catalogue.dir/input_reader.cpp.i
-.PHONY : input_reader.cpp.i
-
-input_reader.s: input_reader.cpp.s
-
-.PHONY : input_reader.s
-
-# target to generate assembly for a file
-input_reader.cpp.s:
-	$(MAKE) -f CMakeFiles/transport_catalogue.dir/build.make CMakeFiles/transport_catalogue.dir/input_reader.cpp.s
-.PHONY : input_reader.cpp.s
-
 json.o: json.cpp.o
 
 .PHONY : json.o
@@ -334,6 +307,33 @@ map_renderer.cpp.s:
 	$(MAKE) -f CMakeFiles/transport_catalogue.dir/build.make CMakeFiles/transport_catalogue.dir/map_renderer.cpp.s
 .PHONY : map_renderer.cpp.s
 
+map_renderer.pb.o: map_renderer.pb.cc.o
+
+.PHONY : map_renderer.pb.o
+
+# target to build an object file
+map_renderer.pb.cc.o:
+	$(MAKE) -f CMakeFiles/transport_catalogue.dir/build.make CMakeFiles/transport_catalogue.dir/map_renderer.pb.cc.o
+.PHONY : map_renderer.pb.cc.o
+
+map_renderer.pb.i: map_renderer.pb.cc.i
+
+.PHONY : map_renderer.pb.i
+
+# target to preprocess a source file
+map_renderer.pb.cc.i:
+	$(MAKE) -f CMakeFiles/transport_catalogue.dir/build.make CMakeFiles/transport_catalogue.dir/map_renderer.pb.cc.i
+.PHONY : map_renderer.pb.cc.i
+
+map_renderer.pb.s: map_renderer.pb.cc.s
+
+.PHONY : map_renderer.pb.s
+
+# target to generate assembly for a file
+map_renderer.pb.cc.s:
+	$(MAKE) -f CMakeFiles/transport_catalogue.dir/build.make CMakeFiles/transport_catalogue.dir/map_renderer.pb.cc.s
+.PHONY : map_renderer.pb.cc.s
+
 request_handler.o: request_handler.cpp.o
 
 .PHONY : request_handler.o
@@ -361,32 +361,32 @@ request_handler.cpp.s:
 	$(MAKE) -f CMakeFiles/transport_catalogue.dir/build.make CMakeFiles/transport_catalogue.dir/request_handler.cpp.s
 .PHONY : request_handler.cpp.s
 
-stat_reader.o: stat_reader.cpp.o
+serialization.o: serialization.cpp.o
 
-.PHONY : stat_reader.o
+.PHONY : serialization.o
 
 # target to build an object file
-stat_reader.cpp.o:
-	$(MAKE) -f CMakeFiles/transport_catalogue.dir/build.make CMakeFiles/transport_catalogue.dir/stat_reader.cpp.o
-.PHONY : stat_reader.cpp.o
+serialization.cpp.o:
+	$(MAKE) -f CMakeFiles/transport_catalogue.dir/build.make CMakeFiles/transport_catalogue.dir/serialization.cpp.o
+.PHONY : serialization.cpp.o
 
-stat_reader.i: stat_reader.cpp.i
+serialization.i: serialization.cpp.i
 
-.PHONY : stat_reader.i
+.PHONY : serialization.i
 
 # target to preprocess a source file
-stat_reader.cpp.i:
-	$(MAKE) -f CMakeFiles/transport_catalogue.dir/build.make CMakeFiles/transport_catalogue.dir/stat_reader.cpp.i
-.PHONY : stat_reader.cpp.i
+serialization.cpp.i:
+	$(MAKE) -f CMakeFiles/transport_catalogue.dir/build.make CMakeFiles/transport_catalogue.dir/serialization.cpp.i
+.PHONY : serialization.cpp.i
 
-stat_reader.s: stat_reader.cpp.s
+serialization.s: serialization.cpp.s
 
-.PHONY : stat_reader.s
+.PHONY : serialization.s
 
 # target to generate assembly for a file
-stat_reader.cpp.s:
-	$(MAKE) -f CMakeFiles/transport_catalogue.dir/build.make CMakeFiles/transport_catalogue.dir/stat_reader.cpp.s
-.PHONY : stat_reader.cpp.s
+serialization.cpp.s:
+	$(MAKE) -f CMakeFiles/transport_catalogue.dir/build.make CMakeFiles/transport_catalogue.dir/serialization.cpp.s
+.PHONY : serialization.cpp.s
 
 svg.o: svg.cpp.o
 
@@ -415,6 +415,33 @@ svg.cpp.s:
 	$(MAKE) -f CMakeFiles/transport_catalogue.dir/build.make CMakeFiles/transport_catalogue.dir/svg.cpp.s
 .PHONY : svg.cpp.s
 
+svg.pb.o: svg.pb.cc.o
+
+.PHONY : svg.pb.o
+
+# target to build an object file
+svg.pb.cc.o:
+	$(MAKE) -f CMakeFiles/transport_catalogue.dir/build.make CMakeFiles/transport_catalogue.dir/svg.pb.cc.o
+.PHONY : svg.pb.cc.o
+
+svg.pb.i: svg.pb.cc.i
+
+.PHONY : svg.pb.i
+
+# target to preprocess a source file
+svg.pb.cc.i:
+	$(MAKE) -f CMakeFiles/transport_catalogue.dir/build.make CMakeFiles/transport_catalogue.dir/svg.pb.cc.i
+.PHONY : svg.pb.cc.i
+
+svg.pb.s: svg.pb.cc.s
+
+.PHONY : svg.pb.s
+
+# target to generate assembly for a file
+svg.pb.cc.s:
+	$(MAKE) -f CMakeFiles/transport_catalogue.dir/build.make CMakeFiles/transport_catalogue.dir/svg.pb.cc.s
+.PHONY : svg.pb.cc.s
+
 transport_catalogue.o: transport_catalogue.cpp.o
 
 .PHONY : transport_catalogue.o
@@ -441,6 +468,33 @@ transport_catalogue.s: transport_catalogue.cpp.s
 transport_catalogue.cpp.s:
 	$(MAKE) -f CMakeFiles/transport_catalogue.dir/build.make CMakeFiles/transport_catalogue.dir/transport_catalogue.cpp.s
 .PHONY : transport_catalogue.cpp.s
+
+transport_catalogue.pb.o: transport_catalogue.pb.cc.o
+
+.PHONY : transport_catalogue.pb.o
+
+# target to build an object file
+transport_catalogue.pb.cc.o:
+	$(MAKE) -f CMakeFiles/transport_catalogue.dir/build.make CMakeFiles/transport_catalogue.dir/transport_catalogue.pb.cc.o
+.PHONY : transport_catalogue.pb.cc.o
+
+transport_catalogue.pb.i: transport_catalogue.pb.cc.i
+
+.PHONY : transport_catalogue.pb.i
+
+# target to preprocess a source file
+transport_catalogue.pb.cc.i:
+	$(MAKE) -f CMakeFiles/transport_catalogue.dir/build.make CMakeFiles/transport_catalogue.dir/transport_catalogue.pb.cc.i
+.PHONY : transport_catalogue.pb.cc.i
+
+transport_catalogue.pb.s: transport_catalogue.pb.cc.s
+
+.PHONY : transport_catalogue.pb.s
+
+# target to generate assembly for a file
+transport_catalogue.pb.cc.s:
+	$(MAKE) -f CMakeFiles/transport_catalogue.dir/build.make CMakeFiles/transport_catalogue.dir/transport_catalogue.pb.cc.s
+.PHONY : transport_catalogue.pb.cc.s
 
 transport_router.o: transport_router.cpp.o
 
@@ -469,6 +523,33 @@ transport_router.cpp.s:
 	$(MAKE) -f CMakeFiles/transport_catalogue.dir/build.make CMakeFiles/transport_catalogue.dir/transport_router.cpp.s
 .PHONY : transport_router.cpp.s
 
+transport_router.pb.o: transport_router.pb.cc.o
+
+.PHONY : transport_router.pb.o
+
+# target to build an object file
+transport_router.pb.cc.o:
+	$(MAKE) -f CMakeFiles/transport_catalogue.dir/build.make CMakeFiles/transport_catalogue.dir/transport_router.pb.cc.o
+.PHONY : transport_router.pb.cc.o
+
+transport_router.pb.i: transport_router.pb.cc.i
+
+.PHONY : transport_router.pb.i
+
+# target to preprocess a source file
+transport_router.pb.cc.i:
+	$(MAKE) -f CMakeFiles/transport_catalogue.dir/build.make CMakeFiles/transport_catalogue.dir/transport_router.pb.cc.i
+.PHONY : transport_router.pb.cc.i
+
+transport_router.pb.s: transport_router.pb.cc.s
+
+.PHONY : transport_router.pb.s
+
+# target to generate assembly for a file
+transport_router.pb.cc.s:
+	$(MAKE) -f CMakeFiles/transport_catalogue.dir/build.make CMakeFiles/transport_catalogue.dir/transport_router.pb.cc.s
+.PHONY : transport_router.pb.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -483,9 +564,6 @@ help:
 	@echo "... geo.o"
 	@echo "... geo.i"
 	@echo "... geo.s"
-	@echo "... input_reader.o"
-	@echo "... input_reader.i"
-	@echo "... input_reader.s"
 	@echo "... json.o"
 	@echo "... json.i"
 	@echo "... json.s"
@@ -501,21 +579,33 @@ help:
 	@echo "... map_renderer.o"
 	@echo "... map_renderer.i"
 	@echo "... map_renderer.s"
+	@echo "... map_renderer.pb.o"
+	@echo "... map_renderer.pb.i"
+	@echo "... map_renderer.pb.s"
 	@echo "... request_handler.o"
 	@echo "... request_handler.i"
 	@echo "... request_handler.s"
-	@echo "... stat_reader.o"
-	@echo "... stat_reader.i"
-	@echo "... stat_reader.s"
+	@echo "... serialization.o"
+	@echo "... serialization.i"
+	@echo "... serialization.s"
 	@echo "... svg.o"
 	@echo "... svg.i"
 	@echo "... svg.s"
+	@echo "... svg.pb.o"
+	@echo "... svg.pb.i"
+	@echo "... svg.pb.s"
 	@echo "... transport_catalogue.o"
 	@echo "... transport_catalogue.i"
 	@echo "... transport_catalogue.s"
+	@echo "... transport_catalogue.pb.o"
+	@echo "... transport_catalogue.pb.i"
+	@echo "... transport_catalogue.pb.s"
 	@echo "... transport_router.o"
 	@echo "... transport_router.i"
 	@echo "... transport_router.s"
+	@echo "... transport_router.pb.o"
+	@echo "... transport_router.pb.i"
+	@echo "... transport_router.pb.s"
 .PHONY : help
 
 

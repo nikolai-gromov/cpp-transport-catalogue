@@ -13,6 +13,10 @@ void TransportRouter::SetRoutingSettings(const RouterSettings& settings) {
     settings_ = {settings};
 }
 
+const RouterSettings& TransportRouter::GetRoutingSettings() {
+    return settings_;
+}
+
 void TransportRouter::BuildRoutes() {
     graph_ = std::make_unique<graph::DirectedWeightedGraph<double>>(catalogue_.GetStopsCount() * 2);
     SetVertexAndEdge();
@@ -22,9 +26,9 @@ void TransportRouter::BuildRoutes() {
     router_ = std::make_unique<graph::Router<double>>(*graph_);
 }
 
-std::optional<RouteItems> TransportRouter::GetRouteByStops(StopPtr start_stop, StopPtr finish_stop) const {
+std::optional<RouteItems> TransportRouter::GetRouteByStops(StopPtr start_stop_ptr, StopPtr finish_stop_ptr) const {
     RouteItems items;
-    std::optional<graph::Router<double>::RouteInfo> router_info = router_->BuildRoute(GetWaitVertex(start_stop), GetWaitVertex(finish_stop));
+    std::optional<graph::Router<double>::RouteInfo> router_info = router_->BuildRoute(GetWaitVertex(start_stop_ptr), GetWaitVertex(finish_stop_ptr));
     if (!router_info) {
         return {};
     }
@@ -56,13 +60,13 @@ void TransportRouter::AddEdgeToItem(graph::VertexId start_vertex, graph::VertexI
     edge_item_[graph_->AddEdge({ start_vertex, stop_vertex, item.time })] = item;
 }
 
-void TransportRouter::AddBusEdge(StopPtr start_stop, StopPtr finish_stop, const std::string_view& bus_name, int span, double distance) {
+void TransportRouter::AddBusEdge(StopPtr start_stop_ptr, StopPtr finish_stop_ptr, const std::string_view& bus_name, int span, double distance) {
     Item item;
     item.type = ItemType::BUS;
     item.name = bus_name;
     item.time = distance / (settings_.bus_velocity *  1000 / 60);
     item.span_count = span;
-    AddEdgeToItem(GetBusVertex(start_stop), GetWaitVertex(finish_stop), item);
+    AddEdgeToItem(GetBusVertex(start_stop_ptr), GetWaitVertex(finish_stop_ptr), item);
 }
 
 void TransportRouter::AddRouteToGraph(const std::string_view& bus_name, BusPtr bus_ptr) {
