@@ -8,7 +8,7 @@
         "program": "${fileDirname}/${fileBasenameNoExtension}",
         "args": [
           //"make_base",
-          //"process_requests"
+          "process_requests"
         ],
         "stopAtEntry": false,
         "cwd": "${workspaceFolder}",
