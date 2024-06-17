@@ -723,7 +723,6 @@ FodyWeavers.xsd
 
 */**/build/
 */**/build_debug/
-*/**/build-release/
 **/.pytest_cache/
 .venv
 # XML Results
