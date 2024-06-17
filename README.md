@@ -5,7 +5,7 @@ ___
 <!--A block of information about the repository in badges-->
 ![Static Badge](https://img.shields.io/badge/Nikolai_Dev-Transport_Catalogue-blue?style=plastic) ![GitHub License](https://img.shields.io/github/license/nikolai-gromov/cpp-transport-catalogue?style=plastic) ![GitHub top language](https://img.shields.io/github/languages/top/nikolai-gromov/cpp-transport-catalogue?style=plastic) ![GitHub language count](https://img.shields.io/github/languages/count/nikolai-gromov/cpp-transport-catalogue?style=plastic) ![GitHub repo stars](https://img.shields.io/github/stars/nikolai-gromov/cpp-transport-catalogue) ![GitHub issues](https://img.shields.io/github/issues/nikolai-gromov/cpp-transport-catalogue?style=plastic)
 
-[![Logotype](/docs/logo.jpg)]()
+[![Logotype](/docs/logo.jpg)](https://github.com/nikolai-gromov/cpp-transport-catalogue/tree/main/transport-catalogue)
 ___
 
 
